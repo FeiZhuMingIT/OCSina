@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "SGTabBarVC.h"
+#import "SGNewfutureVc.h"
+#import "SGUserDefaultTool.h"
+
+#define kVersionKey @"CFBundleShortVersionString"
 @interface AppDelegate ()
 
 @end
@@ -17,10 +21,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    SGTabBarVC *tabbarVc = [SGTabBarVC new];
-    self.window.rootViewController = tabbarVc;
+//    SGTabBarVC *tabbarVc = [SGTabBarVC new];
+    SGNewfutureVc *vc = [[SGNewfutureVc alloc] init];
+    self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)reviewVersion {
+    //当前版本
+    CGFloat currcentVersion = [[NSBundle mainBundle].infoDictionary[kVersionKey] doubleValue];
+    //保存版本
+    CGFloat preVersion = [SGUserDefaultTool doubleForKey:kVersionKey];
+    if (currcentVersion > preVersion) {
+        [SGUserDefaultTool saveDouble:currcentVersion forKey:kVersionKey];
+        // 根控制器显示版本新特性
+        
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -27,6 +27,9 @@
 		189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5AC1BDFC2C800660269 /* View+MASAdditions.m */; settings = {ASSET_TAGS = (); }; };
 		189FC5BA1BDFC2E200660269 /* SGBaseTableViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5B91BDFC2E200660269 /* SGBaseTableViewVc.m */; settings = {ASSET_TAGS = (); }; };
 		189FC5BD1BDFC30D00660269 /* SGLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5BC1BDFC30D00660269 /* SGLoginView.m */; settings = {ASSET_TAGS = (); }; };
+		18EDDA151BE2388500C63CD2 /* SGNewfutureVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDDA141BE2388500C63CD2 /* SGNewfutureVc.m */; settings = {ASSET_TAGS = (); }; };
+		18EDDA181BE238AE00C63CD2 /* SGNewfutureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDDA171BE238AE00C63CD2 /* SGNewfutureCell.m */; settings = {ASSET_TAGS = (); }; };
+		18EDDA1B1BE2530900C63CD2 /* SGUserDefaultTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDDA1A1BE2530900C63CD2 /* SGUserDefaultTool.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +77,12 @@
 		189FC5B91BDFC2E200660269 /* SGBaseTableViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBaseTableViewVc.m; sourceTree = "<group>"; };
 		189FC5BB1BDFC30D00660269 /* SGLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGLoginView.h; sourceTree = "<group>"; };
 		189FC5BC1BDFC30D00660269 /* SGLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGLoginView.m; sourceTree = "<group>"; };
+		18EDDA131BE2388500C63CD2 /* SGNewfutureVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGNewfutureVc.h; sourceTree = "<group>"; };
+		18EDDA141BE2388500C63CD2 /* SGNewfutureVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNewfutureVc.m; sourceTree = "<group>"; };
+		18EDDA161BE238AE00C63CD2 /* SGNewfutureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGNewfutureCell.h; sourceTree = "<group>"; };
+		18EDDA171BE238AE00C63CD2 /* SGNewfutureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNewfutureCell.m; sourceTree = "<group>"; };
+		18EDDA191BE2530900C63CD2 /* SGUserDefaultTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGUserDefaultTool.h; sourceTree = "<group>"; };
+		18EDDA1A1BE2530900C63CD2 /* SGUserDefaultTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGUserDefaultTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +170,7 @@
 		189FC56C1BDFBC3900660269 /* Modul */ = {
 			isa = PBXGroup;
 			children = (
+				18EDDA0F1BE2386C00C63CD2 /* NewFuture */,
 				189FC5751BDFBC3900660269 /* Main */,
 				189FC5711BDFBC3900660269 /* Home */,
 				189FC56D1BDFBC3900660269 /* Discover */,
@@ -374,6 +384,8 @@
 		189FC5851BDFBC3900660269 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				18EDDA191BE2530900C63CD2 /* SGUserDefaultTool.h */,
+				18EDDA1A1BE2530900C63CD2 /* SGUserDefaultTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -407,6 +419,41 @@
 				189FC5AD1BDFC2C800660269 /* View+MASShorthandAdditions.h */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		18EDDA0F1BE2386C00C63CD2 /* NewFuture */ = {
+			isa = PBXGroup;
+			children = (
+				18EDDA101BE2386C00C63CD2 /* Controller */,
+				18EDDA111BE2386C00C63CD2 /* Model */,
+				18EDDA121BE2386C00C63CD2 /* View */,
+			);
+			path = NewFuture;
+			sourceTree = "<group>";
+		};
+		18EDDA101BE2386C00C63CD2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18EDDA131BE2388500C63CD2 /* SGNewfutureVc.h */,
+				18EDDA141BE2388500C63CD2 /* SGNewfutureVc.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18EDDA111BE2386C00C63CD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18EDDA121BE2386C00C63CD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18EDDA161BE238AE00C63CD2 /* SGNewfutureCell.h */,
+				18EDDA171BE238AE00C63CD2 /* SGNewfutureCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,15 +529,18 @@
 			files = (
 				189FC5BD1BDFC30D00660269 /* SGLoginView.m in Sources */,
 				189FC5B51BDFC2C800660269 /* NSArray+MASAdditions.m in Sources */,
+				18EDDA1B1BE2530900C63CD2 /* SGUserDefaultTool.m in Sources */,
 				189FC5B41BDFC2C800660269 /* MASViewConstraint.m in Sources */,
 				189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */,
 				189FC5B11BDFC2C800660269 /* MASConstraintMaker.m in Sources */,
 				189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */,
 				189FC58E1BDFBE8F00660269 /* SGDiscoverTableViewVc.m in Sources */,
+				18EDDA181BE238AE00C63CD2 /* SGNewfutureCell.m in Sources */,
 				189FC5BA1BDFC2E200660269 /* SGBaseTableViewVc.m in Sources */,
 				189FC5B01BDFC2C800660269 /* MASConstraint.m in Sources */,
 				189FC58B1BDFBE7A00660269 /* SGHomeTableViewVc.m in Sources */,
 				189FC5B31BDFC2C800660269 /* MASViewAttribute.m in Sources */,
+				18EDDA151BE2388500C63CD2 /* SGNewfutureVc.m in Sources */,
 				189FC5B61BDFC2C800660269 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				189FC5941BDFBEAB00660269 /* SGProfileTableViewVc.m in Sources */,
 				189FC5AF1BDFC2C800660269 /* MASCompositeConstraint.m in Sources */,
