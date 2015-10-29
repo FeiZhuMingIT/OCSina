@@ -10,7 +10,7 @@
 #import "SGTabBarVC.h"
 #import "SGNewfutureVc.h"
 #import "SGUserDefaultTool.h"
-
+#import "SGWelcomeVc.h"
 #define kVersionKey @"CFBundleShortVersionString"
 @interface AppDelegate ()
 
@@ -22,7 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    SGTabBarVC *tabbarVc = [SGTabBarVC new];
-    SGNewfutureVc *vc = [[SGNewfutureVc alloc] init];
+//    SGNewfutureVc *vc = [[SGNewfutureVc alloc] init];
+    SGWelcomeVc *vc = [[SGWelcomeVc alloc] init];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     return YES;
