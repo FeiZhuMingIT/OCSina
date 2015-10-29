@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SGTabBarVC.h
 //  SGWeiBo
 //
 //  Created by apple on 15/10/27.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SGTabBarVC : UITabBarController
 
 @end
-
