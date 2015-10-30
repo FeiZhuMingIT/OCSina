@@ -6,11 +6,21 @@
 //  Copyright © 2015年 apple. All rights reserved.
 //
 
+// 2/statuses/home_timeline.json
+
 #import "SGWelcomeVc.h"
 #import "UIImageView+WebCache.h"
 #import "Masonry.h"
+#import "SGUserAccount.h"
+#import "SGAFNTool.h"
+#import "SVProgressHUD.h"
+#import "MJExtension.h"
 #define kTextLabel @"欢迎回来"
 @interface SGWelcomeVc ()
+// 网络加载工具
+@property(nonatomic,strong)SGAFNTool *afnTool;
+// 用户类
+@property(nonatomic,strong)SGUserAccount *userAccount;
 @property (nonatomic,weak)UILabel * textLable;
 @property (nonatomic,weak)UIImageView * iconView;
 @property (nonatomic,weak)NSLayoutConstraint * iconViewTopCons;
@@ -22,7 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    // 获取用户数据
+    [self loginUserData];
     
     [self setupSubView];
     
@@ -45,14 +56,16 @@
 
     
     UIImageView *iconView = [[UIImageView alloc] init];
-    [iconView sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"avatar_default_big"]];
     iconView.layer.cornerRadius = 42.5;
+    //先给一张默认的图片先
+//    iconView.backgroundColor = [UIColor orangeColor];
+    iconView.image = [UIImage imageNamed:@"avatar_default_big"];
+//     [self.iconView sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"avatar_default_big"]];
     iconView.layer.masksToBounds = YES;
     [self.view addSubview:iconView];
     self.iconView = iconView;
-    
-    //// usingSpringWithDamping: 值越小弹簧效果越明显 0 - 1
-    // initialSpringVelocity: 初速度
+//    [self setupIconViewImage];
+
   
     
 }
@@ -92,7 +105,39 @@
     
 }
 
+#pragma mark - 获取用户数据
+- (void)loginUserData {
+    //    2.00xetysCmq1YUC8e30c0d792Uyru6C 模拟让access_token直接取 实际上是从远程拿或者解档
+    self.userAccount.access_token = @"2.00xetysCmq1YUC8e30c0d792Uyru6C";
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"access_token"] = self.userAccount.access_token;
+    [self.afnTool.afnHttpManager GET:@"2/statuses/home_timeline.json" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
 
+//        self.userAccount = [self.userAccount setKeyValues:responseObject];
+        NSArray *statuses = responseObject[@"statuses"];
+        NSDictionary *statuses0 = statuses[0];
+        NSDictionary *user = statuses0[@"user"];
+
+        self.userAccount.profile_image_url = user[@"avatar_large"];
+        // 这个加载完成才能setuoIconViewImage // 除非是解档出来的
+        NSLog(@"%@",self.userAccount.profile_image_url);
+        if (self.userAccount.profile_image_url) {
+            [self setupIconViewImage];
+        }
+//
+
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+        [SVProgressHUD showErrorWithStatus:@"加载错误" maskType:3];
+    }];
+
+}
+
+#pragma mark -  加载iconViewimage
+- (void)setupIconViewImage {
+    UIImage *image = [NSURL URLWithString:self.userAccount.profile_image_url];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:self.userAccount.profile_image_url]];
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -100,6 +145,19 @@
     
 }
 
+#pragma mark - set&get
+- (SGUserAccount *)userAccount {
+    if (!_userAccount) {
+        _userAccount = [SGUserAccount shareUserAccount];
+    }
+    return _userAccount;
+}
+- (SGAFNTool *)afnTool {
+    if (!_afnTool) {
+        _afnTool = [SGAFNTool shareAFNTool];
+    }
+    return _afnTool;
+}
 
 
 @end

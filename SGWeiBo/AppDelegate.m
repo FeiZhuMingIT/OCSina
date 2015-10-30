@@ -11,6 +11,7 @@
 #import "SGNewfutureVc.h"
 #import "SGUserDefaultTool.h"
 #import "SGWelcomeVc.h"
+#import "SGoAuthVc.h"
 #define kVersionKey @"CFBundleShortVersionString"
 @interface AppDelegate ()
 
@@ -24,6 +25,7 @@
 //    SGTabBarVC *tabbarVc = [SGTabBarVC new];
 //    SGNewfutureVc *vc = [[SGNewfutureVc alloc] init];
     SGWelcomeVc *vc = [[SGWelcomeVc alloc] init];
+//    SGoAuthVc *vc = [[SGoAuthVc alloc] init];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];
     return YES;
