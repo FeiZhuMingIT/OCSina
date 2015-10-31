@@ -42,6 +42,7 @@
 		5144E71B1BE3F7DD003183CC /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5144E7111BE3F7DD003183CC /* NSObject+MJKeyValue.m */; settings = {ASSET_TAGS = (); }; };
 		5144E71C1BE3F7DD003183CC /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5144E7131BE3F7DD003183CC /* NSObject+MJProperty.m */; settings = {ASSET_TAGS = (); }; };
 		5144E71D1BE3F7DD003183CC /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5144E7151BE3F7DD003183CC /* NSString+MJExtension.m */; settings = {ASSET_TAGS = (); }; };
+		51D9FB1D1BE47FA0001D5583 /* SGaCordingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D9FB1C1BE47FA0001D5583 /* SGaCordingTool.m */; settings = {ASSET_TAGS = (); }; };
 		BCE9B5A11A01E29782B2765A /* libPods-SGWeiBo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9274BBE277DBFC7F09F420A /* libPods-SGWeiBo.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +123,8 @@
 		5144E7131BE3F7DD003183CC /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		5144E7141BE3F7DD003183CC /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		5144E7151BE3F7DD003183CC /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		51D9FB1B1BE47FA0001D5583 /* SGaCordingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGaCordingTool.h; sourceTree = "<group>"; };
+		51D9FB1C1BE47FA0001D5583 /* SGaCordingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGaCordingTool.m; sourceTree = "<group>"; };
 		C9274BBE277DBFC7F09F420A /* libPods-SGWeiBo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SGWeiBo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95C7EFC96F4CA026C2D23A7 /* Pods-SGWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGWeiBo/Pods-SGWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -446,6 +449,8 @@
 				18EDDA1A1BE2530900C63CD2 /* SGUserDefaultTool.m */,
 				5144E6FE1BE3C313003183CC /* SGAFNTool.h */,
 				5144E6FF1BE3C313003183CC /* SGAFNTool.m */,
+				51D9FB1B1BE47FA0001D5583 /* SGaCordingTool.h */,
+				51D9FB1C1BE47FA0001D5583 /* SGaCordingTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -722,6 +727,7 @@
 			files = (
 				189FC5BD1BDFC30D00660269 /* SGLoginView.m in Sources */,
 				5144E7031BE3E564003183CC /* SGUserAccount.m in Sources */,
+				51D9FB1D1BE47FA0001D5583 /* SGaCordingTool.m in Sources */,
 				5144E6F31BE3BFCF003183CC /* SGWelcomeVc.m in Sources */,
 				5144E7171BE3F7DD003183CC /* MJFoundation.m in Sources */,
 				189FC5B51BDFC2C800660269 /* NSArray+MASAdditions.m in Sources */,

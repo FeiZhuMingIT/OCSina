@@ -48,7 +48,7 @@ aFNTool = [[self alloc] init];
         self.userAccount.access_token = responseObject[@"access_token"];
         self.userAccount.uid = responseObject[@"uid"];
         self.userAccount.expires_in = [responseObject[@"expires_in"] doubleValue];
-        NSLog(@"%@",self.userAccount.access_token);
+        [self.userAccount saveAccount];
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"网络不给力" maskType:SVProgressHUDMaskTypeBlack];
     }];

@@ -15,6 +15,7 @@
 #import "SGAFNTool.h"
 #import "SVProgressHUD.h"
 #import "MJExtension.h"
+#import "SGaCordingTool.h"
 #define kTextLabel @"欢迎回来"
 @interface SGWelcomeVc ()
 // 网络加载工具
@@ -108,34 +109,41 @@
 #pragma mark - 获取用户数据
 - (void)loginUserData {
     //    2.00xetysCmq1YUC8e30c0d792Uyru6C 模拟让access_token直接取 实际上是从远程拿或者解档
-    self.userAccount.access_token = @"2.00xetysCmq1YUC8e30c0d792Uyru6C";
+    // 解档数据 这段代码需要增加很多判断，比如如果没有数据那么 access_token 就应该从另外一个地方加载进来
+    // 不过第一次加载数据的时候会保存数据 所以应该加载一下缓存看缓存有没有，没有再解档，再判断
+//    self.userAccount = [SGUserAccount shareUserAccount];
+    self.userAccount = [SGUserAccount loadAccount];
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+
     parameters[@"access_token"] = self.userAccount.access_token;
     [self.afnTool.afnHttpManager GET:@"2/statuses/home_timeline.json" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
 
-//        self.userAccount = [self.userAccount setKeyValues:responseObject];
+        self.userAccount = [SGUserAccount shareUserAccount];
         NSArray *statuses = responseObject[@"statuses"];
         NSDictionary *statuses0 = statuses[0];
         NSDictionary *user = statuses0[@"user"];
-
         self.userAccount.profile_image_url = user[@"avatar_large"];
+        self.userAccount.name = user[@"name"];
+        // 归档
+        [self.userAccount saveAccount];
+        
         // 这个加载完成才能setuoIconViewImage // 除非是解档出来的
         NSLog(@"%@",self.userAccount.profile_image_url);
         if (self.userAccount.profile_image_url) {
             [self setupIconViewImage];
         }
-//
+
 
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         NSLog(@"%@",error);
         [SVProgressHUD showErrorWithStatus:@"加载错误" maskType:3];
     }];
+    
 
 }
 
 #pragma mark -  加载iconViewimage
 - (void)setupIconViewImage {
-    UIImage *image = [NSURL URLWithString:self.userAccount.profile_image_url];
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:self.userAccount.profile_image_url]];
 }
 

@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface SGUserAccount : NSObject
+// 归档要记得添加
+@interface SGUserAccount : NSObject <NSCoding>
 // uid
 @property(nonatomic,strong)NSString *uid;
 // expires_in
@@ -21,4 +21,8 @@
 @property(nonatomic,strong)NSString *profile_image_url;
 // icon
 + (instancetype)shareUserAccount;
+
+// saveAccount
+- (void)saveAccount;
++ (instancetype)loadAccount;
 @end
