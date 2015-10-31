@@ -9,12 +9,13 @@
 #import "SGHomeTableViewVc.h"
 #import "Masonry.h"
 #import "SGUserAccount.h"
+#import "SGHomeBtn.h"
 @interface SGHomeTableViewVc()
 @property (nonatomic,weak)UIButton * leftBtn;
 @property (nonatomic,weak)UIButton * rightBtn;
 @property (nonatomic,weak)UIButton * titleBtn;
 
-
+@property (nonatomic,strong)SGUserAccount * userAccount;
 
 @end
 
@@ -49,25 +50,38 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     
-    UIButton *titleBtn = [[UIButton alloc] init];
-    self.navigationItem.titleView = titleBtn;
+    SGHomeBtn *titleBtn = [[SGHomeBtn alloc] init];
+    [titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     [titleBtn sizeToFit];
+    [titleBtn setTitle:self.userAccount.name forState:UIControlStateNormal];
+    [titleBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    titleBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [titleBtn addTarget:self action:@selector(titleBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
+    self.titleBtn = titleBtn;
+    self.navigationItem.titleView = titleBtn;
+    
     
 }
 
 - (void)setUpNavigationItemFrame {
-    [self.leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.navigationItem);
-        make.left.mas_equalTo(0);
-    }];
-    
-    [self.leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.navigationItem);
-        make.right.mas_equalTo(0);
-    }];
+
     
 }
 
+- (void)titleBtnDidClick {
+    // 发生旋转
+    self.titleBtn.selected = !self.titleBtn.selected;
+    if (self.titleBtn.selected) {
+        // 就近原则
+        [UIView animateWithDuration:0.25 animations:^{
+        self.titleBtn.imageView.transform = CGAffineTransformMakeRotation(M_PI - 0.01);
+        }];
+    } else {
+        [UIView animateWithDuration:0.25 animations:^{
+           self.titleBtn.imageView.transform = CGAffineTransformIdentity;
+        }];
+    }
+}
 
 #pragma mark -  建立set & get
 - (void)leftBtnClick {
@@ -77,7 +91,12 @@
 - (void)rightBtnClick {
     
 }
-
+- (SGUserAccount *)userAccount {
+    if (_userAccount == nil) {
+        _userAccount = [SGUserAccount loadAccount];
+    }
+    return _userAccount;
+}
 
 
 @end

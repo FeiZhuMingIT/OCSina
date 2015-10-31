@@ -84,4 +84,20 @@ aFNTool = [[self alloc] init];
     }
     return _userAccount;
 }
+
+#pragma mark - ERROR
+- (NSError *)errorWithNetworkErrorType:(SGNetworkErrorType)networkErrorType {
+    
+    NSString *useInfo;
+    switch (networkErrorType) {
+        case -1:
+            useInfo = @"accecc token 为空";
+            break;
+        case -2:
+            useInfo = @"uid 为空";
+        default:
+            return nil;
+    }
+    return [[NSError  alloc] initWithDomain:@"cn.itcast.error.network" code:networkErrorType userInfo:@{@"errorDescription":useInfo}];
+}
 @end

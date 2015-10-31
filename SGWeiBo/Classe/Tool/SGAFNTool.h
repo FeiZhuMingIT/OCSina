@@ -15,6 +15,12 @@
 // 全局 一般这种写法用于通知
 //extern NSString * const kAuthorize;
 
+// 网络错误枚举
+typedef NS_ENUM(NSInteger, SGNetworkErrorType) {
+    SGNetworkErrorTypeEmptyToken = -1,
+    SGNetworkErrorTypeEmptyUid = -2
+};
+
 @interface SGAFNTool : NSObject
 @property(nonatomic,strong)AFHTTPSessionManager *afnHttpManager;
 // 请求网址
@@ -35,5 +41,8 @@
 // 加载 access_token
 - (void)access_tokenWithCode:(NSString *)code;
 
+
+// 网络错误枚举方法
+- (NSError *)error;
 
 @end

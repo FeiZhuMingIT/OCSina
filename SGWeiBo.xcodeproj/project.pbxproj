@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181AC92E1BE4F5F900F696CE /* SGHomeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AC92D1BE4F5F900F696CE /* SGHomeBtn.m */; settings = {ASSET_TAGS = (); }; };
 		189FC5531BDFBB3000660269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5521BDFBB3000660269 /* main.m */; };
 		189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5551BDFBB3000660269 /* AppDelegate.m */; };
 		189FC55E1BDFBB3000660269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189FC55D1BDFBB3000660269 /* Assets.xcassets */; };
@@ -47,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181AC92C1BE4F5F900F696CE /* SGHomeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHomeBtn.h; sourceTree = "<group>"; };
+		181AC92D1BE4F5F900F696CE /* SGHomeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHomeBtn.m; sourceTree = "<group>"; };
 		189FC54E1BDFBB3000660269 /* SGWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189FC5521BDFBB3000660269 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		189FC5541BDFBB3000660269 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,6 +153,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		181AC92A1BE4F5CE00F696CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		181AC92B1BE4F5CE00F696CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181AC92C1BE4F5F900F696CE /* SGHomeBtn.h */,
+				181AC92D1BE4F5F900F696CE /* SGHomeBtn.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		189FC5451BDFBB3000660269 = {
 			isa = PBXGroup;
 			children = (
@@ -233,8 +252,8 @@
 				5144E6F41BE3C078003183CC /* oAuth */,
 				18EDDA0F1BE2386C00C63CD2 /* NewFuture */,
 				189FC5751BDFBC3900660269 /* Main */,
-				189FC5711BDFBC3900660269 /* Home */,
 				189FC56D1BDFBC3900660269 /* Discover */,
+				189FC5711BDFBC3900660269 /* Home */,
 				189FC5791BDFBC3900660269 /* Message */,
 				189FC57D1BDFBC3900660269 /* Profile */,
 				189FC5811BDFBC3900660269 /* Text */,
@@ -279,8 +298,8 @@
 			isa = PBXGroup;
 			children = (
 				189FC5721BDFBC3900660269 /* Controller */,
-				189FC5731BDFBC3900660269 /* Model */,
-				189FC5741BDFBC3900660269 /* View */,
+				181AC92A1BE4F5CE00F696CE /* Model */,
+				181AC92B1BE4F5CE00F696CE /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -292,20 +311,6 @@
 				189FC58A1BDFBE7A00660269 /* SGHomeTableViewVc.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		189FC5731BDFBC3900660269 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		189FC5741BDFBC3900660269 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		189FC5751BDFBC3900660269 /* Main */ = {
@@ -740,6 +745,7 @@
 				5144E71B1BE3F7DD003183CC /* NSObject+MJKeyValue.m in Sources */,
 				189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */,
 				189FC58E1BDFBE8F00660269 /* SGDiscoverTableViewVc.m in Sources */,
+				181AC92E1BE4F5F900F696CE /* SGHomeBtn.m in Sources */,
 				18EDDA181BE238AE00C63CD2 /* SGNewfutureCell.m in Sources */,
 				5144E71C1BE3F7DD003183CC /* NSObject+MJProperty.m in Sources */,
 				5144E71A1BE3F7DD003183CC /* NSObject+MJCoding.m in Sources */,

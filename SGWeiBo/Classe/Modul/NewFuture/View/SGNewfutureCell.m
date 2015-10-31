@@ -8,9 +8,11 @@
 
 #import "SGNewfutureCell.h"
 #import "Masonry.h"
+#import "SGUserAccount.h"
 @interface  SGNewfutureCell()
 @property (nonatomic,weak)UIImageView * imageView;
 @property (nonatomic,weak)UIButton * btn;
+
 @end
 
 @implementation SGNewfutureCell
@@ -71,19 +73,21 @@
         make.centerX.equalTo(self.imageView);
         make.top.equalTo(self.imageView.mas_bottom).with.offset(-160);
     }];
-
+    
 }
 
 
+#pragma mark - set && get
 - (void)setIndex:(NSInteger)index {
     _index = index;
     self.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"new_feature_%ld",index+ 1]];
     
 }
 
-
--(void) setShowBtn:(BOOL)showBtn {
+- (void)setShowBtn:(BOOL)showBtn {
     _showBtn = showBtn;
     self.btn.hidden = !showBtn;
 }
+
+
 @end
