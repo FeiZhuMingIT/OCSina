@@ -80,7 +80,7 @@ aFNTool = [[self alloc] init];
 }
 - (SGUserAccount *)userAccount {
     if (!_userAccount) {
-        _userAccount = [SGUserAccount shareUserAccount];
+        _userAccount = [SGUserAccount loadAccount];
     }
     return _userAccount;
 }

@@ -13,14 +13,7 @@
 @end
 @implementation SGUserAccount
 
-+ (instancetype)shareUserAccount {
-    static SGUserAccount *userAccount;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        userAccount = [[self alloc] init];
-    });
-    return userAccount;
-}
+
 
 
 #pragma mark - 归档 解档 保存和解档数据
@@ -47,8 +40,11 @@
     [NSKeyedArchiver archiveRootObject:self toFile:kAccountPath];
 }
 + (instancetype)loadAccount {
-   SGUserAccount *userAccount = (SGUserAccount *)[NSKeyedUnarchiver unarchiveObjectWithFile:kAccountPath];
-    NSLog(@"%@",userAccount.access_token);
+    //  解档是一个消耗性能的操作，如果系统缓存中有了就不需要再解档了
+    static SGUserAccount *userAccount;
+    if (userAccount == nil) { // 如果它是nil就解档，如果不是就不需要解档 直接用就好了
+        userAccount = (SGUserAccount *)[NSKeyedUnarchiver unarchiveObjectWithFile:kAccountPath];
+    }
 //    sharAccount = 
     return userAccount;
 }

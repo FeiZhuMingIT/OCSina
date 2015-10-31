@@ -120,7 +120,7 @@
     parameters[@"access_token"] = self.userAccount.access_token;
     [self.afnTool.afnHttpManager GET:@"2/statuses/home_timeline.json" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
 
-        self.userAccount = [SGUserAccount shareUserAccount];
+        self.userAccount = [SGUserAccount loadAccount];
         NSArray *statuses = responseObject[@"statuses"];
         NSDictionary *statuses0 = statuses[0];
         NSDictionary *user = statuses0[@"user"];
@@ -158,7 +158,7 @@
 #pragma mark - set&get
 - (SGUserAccount *)userAccount {
     if (!_userAccount) {
-        _userAccount = [SGUserAccount shareUserAccount];
+        _userAccount = [SGUserAccount loadAccount];
     }
     return _userAccount;
 }

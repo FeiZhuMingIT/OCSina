@@ -19,8 +19,6 @@
 @property(nonatomic,strong)NSString *name;
 // profile_image_url
 @property(nonatomic,strong)NSString *profile_image_url;
-// icon
-+ (instancetype)shareUserAccount;
 
 // saveAccount
 - (void)saveAccount;
