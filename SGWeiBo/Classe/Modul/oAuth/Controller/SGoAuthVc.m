@@ -84,7 +84,8 @@
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    [self close];
+//    [self close];
+    [SVProgressHUD dismiss];
 }
 
 

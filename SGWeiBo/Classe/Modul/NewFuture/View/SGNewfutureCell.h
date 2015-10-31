@@ -8,14 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SGNewfutureCell : UICollectionViewCell
+@class SGNewfutureCell;
+@protocol SGNewfutureCellDelegate <NSObject>
 
--(void)showBtnAnimation;
+- (void)newfutureCellBtnDidClick;
+
+@end
+
+@interface SGNewfutureCell : UICollectionViewCell
 @property (nonatomic,assign)NSInteger  index;
+@property (nonatomic,assign)BOOL  showBtn;
+@property (nonatomic,weak)id<SGNewfutureCellDelegate> delegate;
+
 
 + (instancetype)newfutureCellWithCollectionView:(UICollectionView *)collectionView withIndexPath:(NSIndexPath *)indexPath;
-
-@property (nonatomic,assign)BOOL  showBtn;
-
--(void)showBtnAnimation;
+- (void)showBtnAnimation;
 @end

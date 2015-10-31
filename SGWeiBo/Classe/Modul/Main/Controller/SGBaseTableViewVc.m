@@ -12,19 +12,24 @@
 #import "SGDiscoverTableViewVc.h"
 #import "SGMessageTableViewVc.h"
 #import "SGProfileTableViewVc.h"
+#import "SGoAuthVc.h"
+#import "SGUserAccount.h"
 @interface SGBaseTableViewVc() <SGLoginViewDelegate>
 
 @end
 @implementation SGBaseTableViewVc
 
 - (void)loadView {
-    [super loadView];
- 
-    [self setUpView];
+   
     
+    SGUserAccount *userAccount = [SGUserAccount loadAccount];
+    if (userAccount.access_token) {
+        [super loadView];
+    } else {
+        [self setUpView];
+        [self setupButton];
+    }
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登陆" style:UIBarButtonItemStylePlain target:self action:@selector(loginBtnDidClick)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(registerBtnDidClick)];
 }
 
 
@@ -42,22 +47,19 @@
     loginView.backgroundColor = [UIColor colorWithWhite:237.0/255.0f alpha:1];
     loginView.delegate = self;
     self.view = loginView;
+    
+}
 
+- (void)setupButton {
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登陆" style:UIBarButtonItemStylePlain target:self action:@selector(loginBtnDidClick)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(registerBtnDidClick)];
 }
 
 - (void)loginBtnDidClick {
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.frame = self.view.bounds;
-    UIWebView * webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    NSURL *url = [NSURL URLWithString:@"www.baidu.com"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [webView loadRequest:request];
-    [vc.view addSubview:webView];
+    
+    // 加载
+    SGoAuthVc *vc = [[SGoAuthVc alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    UIButton *btn = [[UIButton alloc] init];
-    btn.frame = CGRectMake(0, 0, 40, 40);
-    btn.backgroundColor = [UIColor orangeColor];
-//    nav.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     vc.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backController)];
     [self presentViewController:nav animated:YES completion:nil];
     
@@ -65,6 +67,7 @@
 
 - (void)backController {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (void)registerBtnDidClick {

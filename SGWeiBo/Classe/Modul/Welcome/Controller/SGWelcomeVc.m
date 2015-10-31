@@ -16,6 +16,7 @@
 #import "SVProgressHUD.h"
 #import "MJExtension.h"
 #import "SGaCordingTool.h"
+#import "SGTabBarVC.h"
 #define kTextLabel @"欢迎回来"
 @interface SGWelcomeVc ()
 // 网络加载工具
@@ -77,10 +78,11 @@
     [UIView animateWithDuration:1 delay:0.2 usingSpringWithDamping:0.7 initialSpringVelocity:5 options:0 animations:^{
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5 animations:^{
+        [UIView animateWithDuration:1 animations:^{
             self.textLable.alpha = 1;
         } completion:^(BOOL finished) {
             //跳转控制器
+            [UIApplication sharedApplication].keyWindow.rootViewController = [[SGTabBarVC alloc] init];
         }];
     }];
 }

@@ -47,7 +47,9 @@
     [NSKeyedArchiver archiveRootObject:self toFile:kAccountPath];
 }
 + (instancetype)loadAccount {
-   SGUserAccount *userAccount = [NSKeyedUnarchiver unarchiveObjectWithFile:kAccountPath];
+   SGUserAccount *userAccount = (SGUserAccount *)[NSKeyedUnarchiver unarchiveObjectWithFile:kAccountPath];
+    NSLog(@"%@",userAccount.access_token);
+//    sharAccount = 
     return userAccount;
 }
 

@@ -9,6 +9,8 @@
 #import "SGAFNTool.h"
 #import "SGUserAccount.h"
 #import "SVProgressHUD.h"
+#import "AppDelegate.h"
+#import "SGWelcomeVc.h"
 @interface SGAFNTool()
 @property(nonatomic,strong)SGUserAccount *userAccount;
 @end
@@ -48,7 +50,10 @@ aFNTool = [[self alloc] init];
         self.userAccount.access_token = responseObject[@"access_token"];
         self.userAccount.uid = responseObject[@"uid"];
         self.userAccount.expires_in = [responseObject[@"expires_in"] doubleValue];
+        // 归档
         [self.userAccount saveAccount];
+        // 归档完之后要跳刀下一个界面
+       [UIApplication sharedApplication].keyWindow.rootViewController = [[SGWelcomeVc alloc] init];
     } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
         [SVProgressHUD showErrorWithStatus:@"网络不给力" maskType:SVProgressHUDMaskTypeBlack];
     }];

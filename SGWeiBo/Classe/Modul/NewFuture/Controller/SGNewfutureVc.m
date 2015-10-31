@@ -9,7 +9,8 @@
 #import "SGNewfutureVc.h"
 #import "SGNewfutureCell.h"
 #import "Masonry.h"
-@interface SGNewfutureVc ()
+#import "SGTabBarVC.h"
+@interface SGNewfutureVc () <SGNewfutureCellDelegate>
 @property (nonatomic,strong) SGNewfutureCell * lastCell;
 @end
 
@@ -60,7 +61,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SGNewfutureCell *cell = [SGNewfutureCell newfutureCellWithCollectionView:collectionView withIndexPath:indexPath];
-    
+    cell.delegate = self;
     //拿到最后一个cell
     if (indexPath.row == 3)
     {
@@ -73,11 +74,20 @@
 // 当collectionView 显示完毕的时候调用
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    SGNewfutureCell *showCell = (SGNewfutureCell *)cell;
-    if (showCell.index == 3)
-    {
-        [showCell showBtnAnimation];
+    // 正在显示的cell的indexpath
+    NSIndexPath *showPath = [collectionView indexPathsForVisibleItems].firstObject;
+    
+    // 获得正在显示的cell
+    SGNewfutureCell *selecCell = (SGNewfutureCell *)[collectionView cellForItemAtIndexPath:showPath];
+    if (selecCell.index == 3) {
+        [selecCell showBtnAnimation];
     }
+}
+
+//
+
+- (void) newfutureCellBtnDidClick {
+   [UIApplication sharedApplication].keyWindow.rootViewController = [[SGTabBarVC alloc] init];
 }
 
 

@@ -29,6 +29,7 @@
     UIImageView *imageView = [[UIImageView alloc] init];
     self.imageView = imageView;
     imageView.frame = [UIScreen mainScreen].bounds;
+    imageView.userInteractionEnabled = YES;
     [self addSubview:imageView];
     
     UIButton *btn = [[UIButton alloc] init];
@@ -38,12 +39,20 @@
     self.btn = btn;
     [self.btn setTitle:@"开始体验" forState:UIControlStateNormal];
     self.btn.titleLabel.textColor = [UIColor whiteColor];
+    [self.btn addTarget:self action:@selector(beginBtnClick) forControlEvents:UIControlEventTouchDown];
     self.btn.hidden = YES;
-    [imageView addSubview:btn];
+    [self addSubview:btn];
 }
 
 
--(void)showBtnAnimation {
+- (void)beginBtnClick {
+    if ([self.delegate respondsToSelector:@selector(newfutureCellBtnDidClick)]) {
+        [self.delegate newfutureCellBtnDidClick];
+    }
+}
+
+- (void)showBtnAnimation {
+    self.btn.hidden = NO;
     self.btn.transform = CGAffineTransformMakeScale(0, 0);
     [UIView animateWithDuration:0.8 delay:0.2 usingSpringWithDamping:0.6 initialSpringVelocity:0.6 options:UIViewAnimationOptionLayoutSubviews animations:^{
         self.btn.transform = CGAffineTransformIdentity;

@@ -12,26 +12,46 @@
 #import "SGUserDefaultTool.h"
 #import "SGWelcomeVc.h"
 #import "SGoAuthVc.h"
+#import "SGUserAccount.h"
 #define kVersionKey @"CFBundleShortVersionString"
 @interface AppDelegate ()
 
+@property (nonatomic,strong) SGUserAccount *userAccount;
+@property (nonatomic,assign)BOOL  Login;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    _Login = self.userAccount.access_token != nil;
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    SGTabBarVC *tabbarVc = [SGTabBarVC new];
-//    SGNewfutureVc *vc = [[SGNewfutureVc alloc] init];
-    SGWelcomeVc *vc = [[SGWelcomeVc alloc] init];
-//    SGoAuthVc *vc = [[SGoAuthVc alloc] init];
-    self.window.rootViewController = vc;
+    self.window.rootViewController = [self setRootViewController];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-- (void)reviewVersion {
+- (UIViewController *)setRootViewController {
+     // 先解档看是否有数据，有数据证明登陆过
+    if (_Login) { // 登陆
+        //是否是新版本
+        if ([self reviewVersion]) { // 是新版本
+            SGNewfutureVc *newFuture = [[SGNewfutureVc alloc] init];
+            return newFuture;
+        } else { // 不是新版本
+            SGWelcomeVc *welComeVc = [[SGWelcomeVc alloc] init];
+            return welComeVc;
+        }
+    } else { // 不是登陆
+        SGTabBarVC *tabbarVc = [[SGTabBarVC alloc] init];
+        return tabbarVc;
+    }
+}
+
+#pragma mark - 版本新特性
+- (BOOL)reviewVersion {
     //当前版本
     CGFloat currcentVersion = [[NSBundle mainBundle].infoDictionary[kVersionKey] doubleValue];
     //保存版本
@@ -39,9 +59,23 @@
     if (currcentVersion > preVersion) {
         [SGUserDefaultTool saveDouble:currcentVersion forKey:kVersionKey];
         // 根控制器显示版本新特性
-        
+        return YES;
     }
+    return NO;
 }
+
+
+#pragma mark - set && get
+-(SGUserAccount *)userAccount {
+    if (!_userAccount) {
+        _userAccount = [SGUserAccount loadAccount];
+
+    }
+    return _userAccount;
+}
+
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
