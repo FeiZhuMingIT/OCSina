@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		181AC92E1BE4F5F900F696CE /* SGHomeBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AC92D1BE4F5F900F696CE /* SGHomeBtn.m */; settings = {ASSET_TAGS = (); }; };
+		181AC9311BE4FE0C00F696CE /* SGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AC9301BE4FE0C00F696CE /* SGUser.m */; settings = {ASSET_TAGS = (); }; };
+		181AC9341BE5015700F696CE /* SGStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AC9331BE5015700F696CE /* SGStatus.m */; settings = {ASSET_TAGS = (); }; };
+		181AC9371BE504F500F696CE /* SGUserAccountData.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AC9361BE504F500F696CE /* SGUserAccountData.m */; settings = {ASSET_TAGS = (); }; };
 		189FC5531BDFBB3000660269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5521BDFBB3000660269 /* main.m */; };
 		189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5551BDFBB3000660269 /* AppDelegate.m */; };
 		189FC55E1BDFBB3000660269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189FC55D1BDFBB3000660269 /* Assets.xcassets */; };
@@ -50,6 +53,12 @@
 /* Begin PBXFileReference section */
 		181AC92C1BE4F5F900F696CE /* SGHomeBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHomeBtn.h; sourceTree = "<group>"; };
 		181AC92D1BE4F5F900F696CE /* SGHomeBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHomeBtn.m; sourceTree = "<group>"; };
+		181AC92F1BE4FE0C00F696CE /* SGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGUser.h; path = SGWeiBo/Classe/model/SGUser.h; sourceTree = SOURCE_ROOT; };
+		181AC9301BE4FE0C00F696CE /* SGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGUser.m; path = SGWeiBo/Classe/model/SGUser.m; sourceTree = SOURCE_ROOT; };
+		181AC9321BE5015700F696CE /* SGStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGStatus.h; path = SGWeiBo/Classe/model/SGStatus.h; sourceTree = SOURCE_ROOT; };
+		181AC9331BE5015700F696CE /* SGStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGStatus.m; path = SGWeiBo/Classe/model/SGStatus.m; sourceTree = SOURCE_ROOT; };
+		181AC9351BE504F500F696CE /* SGUserAccountData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGUserAccountData.h; path = SGWeiBo/Classe/model/SGUserAccountData.h; sourceTree = SOURCE_ROOT; };
+		181AC9361BE504F500F696CE /* SGUserAccountData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGUserAccountData.m; path = SGWeiBo/Classe/model/SGUserAccountData.m; sourceTree = SOURCE_ROOT; };
 		189FC54E1BDFBB3000660269 /* SGWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189FC5521BDFBB3000660269 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		189FC5541BDFBB3000660269 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -239,8 +248,14 @@
 		189FC56B1BDFBC3900660269 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				181AC9351BE504F500F696CE /* SGUserAccountData.h */,
+				181AC9361BE504F500F696CE /* SGUserAccountData.m */,
 				5144E7011BE3E564003183CC /* SGUserAccount.h */,
 				5144E7021BE3E564003183CC /* SGUserAccount.m */,
+				181AC9321BE5015700F696CE /* SGStatus.h */,
+				181AC9331BE5015700F696CE /* SGStatus.m */,
+				181AC92F1BE4FE0C00F696CE /* SGUser.h */,
+				181AC9301BE4FE0C00F696CE /* SGUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -746,6 +761,7 @@
 				189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */,
 				189FC58E1BDFBE8F00660269 /* SGDiscoverTableViewVc.m in Sources */,
 				181AC92E1BE4F5F900F696CE /* SGHomeBtn.m in Sources */,
+				181AC9311BE4FE0C00F696CE /* SGUser.m in Sources */,
 				18EDDA181BE238AE00C63CD2 /* SGNewfutureCell.m in Sources */,
 				5144E71C1BE3F7DD003183CC /* NSObject+MJProperty.m in Sources */,
 				5144E71A1BE3F7DD003183CC /* NSObject+MJCoding.m in Sources */,
@@ -753,6 +769,7 @@
 				189FC5BA1BDFC2E200660269 /* SGBaseTableViewVc.m in Sources */,
 				189FC5B01BDFC2C800660269 /* MASConstraint.m in Sources */,
 				189FC58B1BDFBE7A00660269 /* SGHomeTableViewVc.m in Sources */,
+				181AC9341BE5015700F696CE /* SGStatus.m in Sources */,
 				189FC5B31BDFC2C800660269 /* MASViewAttribute.m in Sources */,
 				5144E6FA1BE3C113003183CC /* SGoAuthVc.m in Sources */,
 				5144E71D1BE3F7DD003183CC /* NSString+MJExtension.m in Sources */,
@@ -764,6 +781,7 @@
 				189FC5B21BDFC2C800660269 /* MASLayoutConstraint.m in Sources */,
 				189FC5881BDFBCF200660269 /* SGTabBarVC.m in Sources */,
 				189FC5911BDFBE9D00660269 /* SGMessageTableViewVc.m in Sources */,
+				181AC9371BE504F500F696CE /* SGUserAccountData.m in Sources */,
 				189FC5531BDFBB3000660269 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

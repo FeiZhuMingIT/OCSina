@@ -17,6 +17,9 @@
 #import "MJExtension.h"
 #import "SGaCordingTool.h"
 #import "SGTabBarVC.h"
+#import "SGStatus.h"
+#import "SGUser.h"
+#import "SGUserAccountData.h"
 #define kTextLabel @"欢迎回来"
 @interface SGWelcomeVc ()
 // 网络加载工具
@@ -119,9 +122,11 @@
 
     parameters[@"access_token"] = self.userAccount.access_token;
     [self.afnTool.afnHttpManager GET:@"2/statuses/home_timeline.json" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-
         self.userAccount = [SGUserAccount loadAccount];
         NSArray *statuses = responseObject[@"statuses"];
+        SGUserAccountData *userAccountData = [SGUserAccountData shareUserAccount];
+        userAccountData.statuses= [SGStatus objectArrayWithKeyValuesArray:statuses];
+        NSLog(@"%@",userAccountData.statuses);
         NSDictionary *statuses0 = statuses[0];
         NSDictionary *user = statuses0[@"user"];
         self.userAccount.profile_image_url = user[@"avatar_large"];
