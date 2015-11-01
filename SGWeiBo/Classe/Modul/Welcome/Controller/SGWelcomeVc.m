@@ -125,8 +125,8 @@
         self.userAccount = [SGUserAccount loadAccount];
         NSArray *statuses = responseObject[@"statuses"];
         SGUserAccountData *userAccountData = [SGUserAccountData shareUserAccount];
-        userAccountData.statuses= [SGStatus objectArrayWithKeyValuesArray:statuses];
-        NSLog(@"%@",userAccountData.statuses);
+//        userAccountData.statuses= [SGStatus objectArrayWithKeyValuesArray:statuses];
+//        NSLog(@"%@",userAccountData.statuses);
         NSDictionary *statuses0 = statuses[0];
         NSDictionary *user = statuses0[@"user"];
         self.userAccount.profile_image_url = user[@"avatar_large"];

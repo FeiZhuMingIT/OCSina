@@ -45,4 +45,6 @@ typedef NS_ENUM(NSInteger, SGNetworkErrorType) {
 // 网络错误枚举方法
 - (NSError *)error;
 
+
+- (NSDictionary *)loadData;
 @end

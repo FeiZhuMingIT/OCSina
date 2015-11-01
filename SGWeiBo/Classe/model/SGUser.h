@@ -17,6 +17,8 @@
 @property (nonatomic,strong)NSString * profile_image_url;
 // 没有认证 -1 ，认证用户: 0 企业认证:2,3,5 达人: 220
 @property (nonatomic,assign)NSInteger  verified_type;
+// 认证图片
+@property (nonatomic,strong)UIImage * verified_image;
 // 会员等级mbrank
 @property (nonatomic,assign)NSInteger  mbrank;
 // 根据不同会员配置不同图片

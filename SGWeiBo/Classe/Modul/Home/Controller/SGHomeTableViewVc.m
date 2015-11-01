@@ -8,15 +8,23 @@
 
 #import "SGHomeTableViewVc.h"
 #import "Masonry.h"
+#import "SGStatus.h"
 #import "SGUserAccount.h"
 #import "SGHomeBtn.h"
-@interface SGHomeTableViewVc()
+#import "SGHomeCell.h"
+#import "SGAFNTool.h"
+#import "MJExtension.h"
+
+@interface SGHomeTableViewVc() <UITabBarDelegate,UITableViewDataSource>
 @property (nonatomic,weak)UIButton * leftBtn;
 @property (nonatomic,weak)UIButton * rightBtn;
 @property (nonatomic,weak)UIButton * titleBtn;
 
 @property (nonatomic,strong)SGUserAccount * userAccount;
 
+
+// 数据
+@property (nonatomic,strong)NSArray * statuses;
 @end
 
 @implementation SGHomeTableViewVc
@@ -26,9 +34,20 @@
     if([SGUserAccount loadAccount].access_token)
     [self setUpNavigationItem];
     [self setUpNavigationItemFrame];
-    // setup
+    
+    // setuptableView
+    [self setupTableView];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 500;
+   
 }
 
+#pragma mark - 添加子控件
+
+- (void)setupTableView {
+    
+}
 - (void)setUpNavigationItem {
     
     UIButton *leftBtn = [[UIButton alloc] init];
@@ -83,6 +102,21 @@
     }
 }
 
+
+#pragma mark - tableView数据源方法
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.statuses.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SGHomeCell *homeCell = [SGHomeCell homeCellWithTableView:tableView];
+    homeCell.status = self.statuses[indexPath.row];
+    return homeCell;
+}
+
 #pragma mark -  建立set & get
 - (void)leftBtnClick {
     
@@ -98,5 +132,14 @@
     return _userAccount;
 }
 
+- (NSArray *)statuses {
+    if (!_statuses) {
+        
+       NSDictionary* dictionary = [SGAFNTool shareAFNTool].loadData;
+        NSArray *statuses = dictionary[@"statuses"];
+        _statuses = [SGStatus objectArrayWithKeyValuesArray:statuses];
+    }
+    return _statuses;
+}
 
 @end

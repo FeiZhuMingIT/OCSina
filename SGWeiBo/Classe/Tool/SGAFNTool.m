@@ -100,4 +100,20 @@ aFNTool = [[self alloc] init];
     }
     return [[NSError  alloc] initWithDomain:@"cn.itcast.error.network" code:networkErrorType userInfo:@{@"errorDescription":useInfo}];
 }
+
+#pragma mark - 加载网络数据
+// 现在加载本地数据以后换成加载网络数据
+- (NSDictionary *)loadData {
+    NSString *dataFlie = [[NSBundle mainBundle] pathForResource:@"statuses" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:dataFlie];
+    // 解析文件 ,有可能解析失败 用try -case // 临时用不管它
+//    NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:0 error:nil]);
+    return [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+}
+
+
+
+
+
 @end

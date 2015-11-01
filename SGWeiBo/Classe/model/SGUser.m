@@ -41,4 +41,29 @@
     // 把数组的值全部打印出来
     return [NSString stringWithFormat:@"%@",[self dictionaryWithValuesForKeys:descriptionDic]];
 }
+
+
+- (void)setVerified_type:(NSInteger)verified_type
+{
+    // 根据用户的  status.user.verified_type来判断认真图片
+    _verified_type = verified_type;
+        switch (verified_type) {
+            case 220:
+                self.verified_image = [UIImage imageNamed:@"avatar_grassroot"];
+                break;
+            case 1:
+                self.verified_image = [UIImage imageNamed:@"avatar_vip"];
+                break;
+            case 2:
+            case 3:
+            case 5:
+                self.verified_image = [UIImage imageNamed:@"avatar_enterprise_vip"];
+                break;
+            default:
+                break;
+        }
+    
+}
+
+
 @end

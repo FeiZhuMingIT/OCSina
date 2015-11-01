@@ -11,6 +11,15 @@
 		181AC9311BE4FE0C00F696CE /* SGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AC9301BE4FE0C00F696CE /* SGUser.m */; settings = {ASSET_TAGS = (); }; };
 		181AC9341BE5015700F696CE /* SGStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AC9331BE5015700F696CE /* SGStatus.m */; settings = {ASSET_TAGS = (); }; };
 		181AC9371BE504F500F696CE /* SGUserAccountData.m in Sources */ = {isa = PBXBuildFile; fileRef = 181AC9361BE504F500F696CE /* SGUserAccountData.m */; settings = {ASSET_TAGS = (); }; };
+		181C7E601BE5A9B400FC764B /* SGHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E5F1BE5A9B400FC764B /* SGHomeCell.m */; settings = {ASSET_TAGS = (); }; };
+		181C7E631BE5B66B00FC764B /* SGTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E621BE5B66B00FC764B /* SGTopView.m */; settings = {ASSET_TAGS = (); }; };
+		181C7E661BE5B67900FC764B /* SGBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E651BE5B67900FC764B /* SGBottomView.m */; settings = {ASSET_TAGS = (); }; };
+		181C7E691BE5B69100FC764B /* SGTextLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E681BE5B69100FC764B /* SGTextLabel.m */; settings = {ASSET_TAGS = (); }; };
+		181C7E6C1BE5B6B100FC764B /* SGPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E6B1BE5B6B100FC764B /* SGPictureView.m */; settings = {ASSET_TAGS = (); }; };
+		181C7E6E1BE5DA7F00FC764B /* statuses.json in Resources */ = {isa = PBXBuildFile; fileRef = 181C7E6D1BE5DA7F00FC764B /* statuses.json */; settings = {ASSET_TAGS = (); }; };
+		181C7E791BE5E7E200FC764B /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E781BE5E7E200FC764B /* UILabel+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		181C7E7C1BE5F77400FC764B /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E7B1BE5F77400FC764B /* UIButton+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		181C7E7F1BE625AE00FC764B /* SGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E7E1BE625AE00FC764B /* SGCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		189FC5531BDFBB3000660269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5521BDFBB3000660269 /* main.m */; };
 		189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5551BDFBB3000660269 /* AppDelegate.m */; };
 		189FC55E1BDFBB3000660269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189FC55D1BDFBB3000660269 /* Assets.xcassets */; };
@@ -59,6 +68,23 @@
 		181AC9331BE5015700F696CE /* SGStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGStatus.m; path = SGWeiBo/Classe/model/SGStatus.m; sourceTree = SOURCE_ROOT; };
 		181AC9351BE504F500F696CE /* SGUserAccountData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGUserAccountData.h; path = SGWeiBo/Classe/model/SGUserAccountData.h; sourceTree = SOURCE_ROOT; };
 		181AC9361BE504F500F696CE /* SGUserAccountData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGUserAccountData.m; path = SGWeiBo/Classe/model/SGUserAccountData.m; sourceTree = SOURCE_ROOT; };
+		181C7E5E1BE5A9B400FC764B /* SGHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGHomeCell.h; sourceTree = "<group>"; };
+		181C7E5F1BE5A9B400FC764B /* SGHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGHomeCell.m; sourceTree = "<group>"; };
+		181C7E611BE5B66B00FC764B /* SGTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTopView.h; sourceTree = "<group>"; };
+		181C7E621BE5B66B00FC764B /* SGTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTopView.m; sourceTree = "<group>"; };
+		181C7E641BE5B67900FC764B /* SGBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBottomView.h; sourceTree = "<group>"; };
+		181C7E651BE5B67900FC764B /* SGBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBottomView.m; sourceTree = "<group>"; };
+		181C7E671BE5B69100FC764B /* SGTextLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTextLabel.h; sourceTree = "<group>"; };
+		181C7E681BE5B69100FC764B /* SGTextLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTextLabel.m; sourceTree = "<group>"; };
+		181C7E6A1BE5B6B100FC764B /* SGPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPictureView.h; sourceTree = "<group>"; };
+		181C7E6B1BE5B6B100FC764B /* SGPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPictureView.m; sourceTree = "<group>"; };
+		181C7E6D1BE5DA7F00FC764B /* statuses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = statuses.json; sourceTree = "<group>"; };
+		181C7E771BE5E7E200FC764B /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		181C7E781BE5E7E200FC764B /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		181C7E7A1BE5F77400FC764B /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		181C7E7B1BE5F77400FC764B /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		181C7E7D1BE625AE00FC764B /* SGCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewCell.h; sourceTree = "<group>"; };
+		181C7E7E1BE625AE00FC764B /* SGCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionViewCell.m; sourceTree = "<group>"; };
 		189FC54E1BDFBB3000660269 /* SGWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189FC5521BDFBB3000660269 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		189FC5541BDFBB3000660269 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -172,10 +198,41 @@
 		181AC92B1BE4F5CE00F696CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				181C7E5D1BE5A99100FC764B /* HomeCell */,
 				181AC92C1BE4F5F900F696CE /* SGHomeBtn.h */,
 				181AC92D1BE4F5F900F696CE /* SGHomeBtn.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		181C7E5D1BE5A99100FC764B /* HomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				181C7E5E1BE5A9B400FC764B /* SGHomeCell.h */,
+				181C7E5F1BE5A9B400FC764B /* SGHomeCell.m */,
+				181C7E611BE5B66B00FC764B /* SGTopView.h */,
+				181C7E621BE5B66B00FC764B /* SGTopView.m */,
+				181C7E641BE5B67900FC764B /* SGBottomView.h */,
+				181C7E651BE5B67900FC764B /* SGBottomView.m */,
+				181C7E671BE5B69100FC764B /* SGTextLabel.h */,
+				181C7E681BE5B69100FC764B /* SGTextLabel.m */,
+				181C7E6A1BE5B6B100FC764B /* SGPictureView.h */,
+				181C7E6B1BE5B6B100FC764B /* SGPictureView.m */,
+				181C7E7D1BE625AE00FC764B /* SGCollectionViewCell.h */,
+				181C7E7E1BE625AE00FC764B /* SGCollectionViewCell.m */,
+			);
+			path = HomeCell;
+			sourceTree = "<group>";
+		};
+		181C7E731BE5E7AA00FC764B /* Exsension */ = {
+			isa = PBXGroup;
+			children = (
+				181C7E771BE5E7E200FC764B /* UILabel+Extension.h */,
+				181C7E781BE5E7E200FC764B /* UILabel+Extension.m */,
+				181C7E7A1BE5F77400FC764B /* UIButton+Extension.h */,
+				181C7E7B1BE5F77400FC764B /* UIButton+Extension.m */,
+			);
+			path = Exsension;
 			sourceTree = "<group>";
 		};
 		189FC5451BDFBB3000660269 = {
@@ -203,6 +260,7 @@
 				189FC5551BDFBB3000660269 /* AppDelegate.m */,
 				189FC5681BDFBC3900660269 /* Classe */,
 				189FC55D1BDFBB3000660269 /* Assets.xcassets */,
+				181C7E6D1BE5DA7F00FC764B /* statuses.json */,
 				189FC5621BDFBB3000660269 /* Info.plist */,
 				189FC5511BDFBB3000660269 /* Supporting Files */,
 			);
@@ -220,20 +278,13 @@
 		189FC5681BDFBC3900660269 /* Classe */ = {
 			isa = PBXGroup;
 			children = (
-				189FC5691BDFBC3900660269 /* Extension */,
+				181C7E731BE5E7AA00FC764B /* Exsension */,
 				189FC56A1BDFBC3900660269 /* Library */,
 				189FC56B1BDFBC3900660269 /* Model */,
 				189FC56C1BDFBC3900660269 /* Modul */,
 				189FC5851BDFBC3900660269 /* Tool */,
 			);
 			path = Classe;
-			sourceTree = "<group>";
-		};
-		189FC5691BDFBC3900660269 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		189FC56A1BDFBC3900660269 /* Library */ = {
@@ -685,6 +736,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181C7E6E1BE5DA7F00FC764B /* statuses.json in Resources */,
 				189FC5AE1BDFC2C800660269 /* Info.plist in Resources */,
 				189FC55E1BDFBB3000660269 /* Assets.xcassets in Resources */,
 			);
@@ -753,20 +805,25 @@
 				189FC5B51BDFC2C800660269 /* NSArray+MASAdditions.m in Sources */,
 				5144E7001BE3C313003183CC /* SGAFNTool.m in Sources */,
 				18EDDA1B1BE2530900C63CD2 /* SGUserDefaultTool.m in Sources */,
+				181C7E7F1BE625AE00FC764B /* SGCollectionViewCell.m in Sources */,
 				5144E7191BE3F7DD003183CC /* MJType.m in Sources */,
 				189FC5B41BDFC2C800660269 /* MASViewConstraint.m in Sources */,
 				189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */,
 				189FC5B11BDFC2C800660269 /* MASConstraintMaker.m in Sources */,
 				5144E71B1BE3F7DD003183CC /* NSObject+MJKeyValue.m in Sources */,
+				181C7E661BE5B67900FC764B /* SGBottomView.m in Sources */,
+				181C7E691BE5B69100FC764B /* SGTextLabel.m in Sources */,
 				189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */,
 				189FC58E1BDFBE8F00660269 /* SGDiscoverTableViewVc.m in Sources */,
 				181AC92E1BE4F5F900F696CE /* SGHomeBtn.m in Sources */,
 				181AC9311BE4FE0C00F696CE /* SGUser.m in Sources */,
+				181C7E601BE5A9B400FC764B /* SGHomeCell.m in Sources */,
 				18EDDA181BE238AE00C63CD2 /* SGNewfutureCell.m in Sources */,
 				5144E71C1BE3F7DD003183CC /* NSObject+MJProperty.m in Sources */,
 				5144E71A1BE3F7DD003183CC /* NSObject+MJCoding.m in Sources */,
 				5144E7161BE3F7DD003183CC /* MJConst.m in Sources */,
 				189FC5BA1BDFC2E200660269 /* SGBaseTableViewVc.m in Sources */,
+				181C7E7C1BE5F77400FC764B /* UIButton+Extension.m in Sources */,
 				189FC5B01BDFC2C800660269 /* MASConstraint.m in Sources */,
 				189FC58B1BDFBE7A00660269 /* SGHomeTableViewVc.m in Sources */,
 				181AC9341BE5015700F696CE /* SGStatus.m in Sources */,
@@ -774,6 +831,9 @@
 				5144E6FA1BE3C113003183CC /* SGoAuthVc.m in Sources */,
 				5144E71D1BE3F7DD003183CC /* NSString+MJExtension.m in Sources */,
 				18EDDA151BE2388500C63CD2 /* SGNewfutureVc.m in Sources */,
+				181C7E791BE5E7E200FC764B /* UILabel+Extension.m in Sources */,
+				181C7E631BE5B66B00FC764B /* SGTopView.m in Sources */,
+				181C7E6C1BE5B6B100FC764B /* SGPictureView.m in Sources */,
 				189FC5B61BDFC2C800660269 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				189FC5941BDFBEAB00660269 /* SGProfileTableViewVc.m in Sources */,
 				189FC5AF1BDFC2C800660269 /* MASCompositeConstraint.m in Sources */,

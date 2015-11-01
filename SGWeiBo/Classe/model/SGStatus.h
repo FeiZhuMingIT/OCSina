@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SGUser.h"
+@class SGUser;
 @interface SGStatus : NSObject
 @property (nonatomic,strong)NSString * created_at;
 @property (nonatomic,strong)NSString * idstr;
 @property (nonatomic,strong)NSString * text;
 @property (nonatomic,strong)NSString * source;
-@property (nonatomic,strong)NSString * pic_urls;
+@property (nonatomic,strong)NSArray * pic_urls;
+// 图片数据字典
+@property (nonatomic,strong)NSArray * picUrls;
 @property (nonatomic,strong)SGUser * user;
 
+// 先模拟数据
++ (NSArray *)loadStatusData;
 @end
