@@ -13,4 +13,10 @@
 @property (nonatomic,strong)SGStatus * status;
 
 + (instancetype)homeCellWithTableView:(UITableView *)tableView;
+
+
+@property (weak, nonatomic) NSLayoutConstraint *pictureHeightConstraint;
+
+@property (nonatomic,assign)CGFloat  cellHeightx;
+- (CGFloat)cellHeight;
 @end

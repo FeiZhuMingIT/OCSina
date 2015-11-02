@@ -8,6 +8,7 @@
 
 #import "SGCollectionViewCell.h"
 #import "UIImageView+WebCache.h"
+#import "Masonry.h"
 @interface SGCollectionViewCell()
 @property (nonatomic,weak)UIImageView * imageView;
 @end
@@ -24,8 +25,11 @@
 - (void)setupSubView {
     UIImageView *imageView = [[UIImageView alloc] init];
     self.imageView = imageView;
-    imageView.frame = self.bounds;
-    [self addSubview:imageView];
+//    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self);
+//        make.size.equalTo(self)
+//    }];
+    [self.contentView addSubview:imageView];
 }
 
 

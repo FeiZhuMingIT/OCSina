@@ -124,6 +124,7 @@
     [self.afnTool.afnHttpManager GET:@"2/statuses/home_timeline.json" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         self.userAccount = [SGUserAccount loadAccount];
         NSArray *statuses = responseObject[@"statuses"];
+        NSLog(@"%@",statuses);
         SGUserAccountData *userAccountData = [SGUserAccountData shareUserAccount];
 //        userAccountData.statuses= [SGStatus objectArrayWithKeyValuesArray:statuses];
 //        NSLog(@"%@",userAccountData.statuses);
