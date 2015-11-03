@@ -7,5 +7,6 @@ target 'SGWeiBo' do
 pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'SVProgressHUD'
+pod 'MJRefresh', '~> 2.4.12'
 end
 

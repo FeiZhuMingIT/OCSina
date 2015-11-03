@@ -12,7 +12,7 @@
 /**
  * 微博数据，里面存储CZStatus模型
  */
-@property(nonatomic,strong)NSArray *statuses;
+//@property(nonatomic,strong)NSMutableArray *statuses;
 
 /**
  * 近期微博总数

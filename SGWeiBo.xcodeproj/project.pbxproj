@@ -44,6 +44,9 @@
 		18EDDA151BE2388500C63CD2 /* SGNewfutureVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDDA141BE2388500C63CD2 /* SGNewfutureVc.m */; settings = {ASSET_TAGS = (); }; };
 		18EDDA181BE238AE00C63CD2 /* SGNewfutureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDDA171BE238AE00C63CD2 /* SGNewfutureCell.m */; settings = {ASSET_TAGS = (); }; };
 		18EDDA1B1BE2530900C63CD2 /* SGUserDefaultTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EDDA1A1BE2530900C63CD2 /* SGUserDefaultTool.m */; settings = {ASSET_TAGS = (); }; };
+		18FC71BE1BE8ED8A0098D7F5 /* SGSendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FC71BD1BE8ED8A0098D7F5 /* SGSendController.m */; settings = {ASSET_TAGS = (); }; };
+		18FC71C21BE8F59D0098D7F5 /* SGTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FC71C11BE8F59D0098D7F5 /* SGTitleView.m */; settings = {ASSET_TAGS = (); }; };
+		18FC71C51BE8F6DE0098D7F5 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FC71C41BE8F6DE0098D7F5 /* NSString+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		5144E6F31BE3BFCF003183CC /* SGWelcomeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5144E6F21BE3BFCF003183CC /* SGWelcomeVc.m */; settings = {ASSET_TAGS = (); }; };
 		5144E6FA1BE3C113003183CC /* SGoAuthVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5144E6F91BE3C113003183CC /* SGoAuthVc.m */; settings = {ASSET_TAGS = (); }; };
 		5144E7001BE3C313003183CC /* SGAFNTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5144E6FF1BE3C313003183CC /* SGAFNTool.m */; settings = {ASSET_TAGS = (); }; };
@@ -138,6 +141,12 @@
 		18EDDA171BE238AE00C63CD2 /* SGNewfutureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGNewfutureCell.m; sourceTree = "<group>"; };
 		18EDDA191BE2530900C63CD2 /* SGUserDefaultTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGUserDefaultTool.h; sourceTree = "<group>"; };
 		18EDDA1A1BE2530900C63CD2 /* SGUserDefaultTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGUserDefaultTool.m; sourceTree = "<group>"; };
+		18FC71BC1BE8ED8A0098D7F5 /* SGSendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSendController.h; sourceTree = "<group>"; };
+		18FC71BD1BE8ED8A0098D7F5 /* SGSendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSendController.m; sourceTree = "<group>"; };
+		18FC71C01BE8F59D0098D7F5 /* SGTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTitleView.h; sourceTree = "<group>"; };
+		18FC71C11BE8F59D0098D7F5 /* SGTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTitleView.m; sourceTree = "<group>"; };
+		18FC71C31BE8F6DE0098D7F5 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		18FC71C41BE8F6DE0098D7F5 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		194C7E227C48DDF7853CBDB2 /* Pods-SGWeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGWeiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SGWeiBo/Pods-SGWeiBo.release.xcconfig"; sourceTree = "<group>"; };
 		5144E6F11BE3BFCF003183CC /* SGWelcomeVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGWelcomeVc.h; sourceTree = "<group>"; };
 		5144E6F21BE3BFCF003183CC /* SGWelcomeVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGWelcomeVc.m; sourceTree = "<group>"; };
@@ -236,6 +245,8 @@
 				181C7E781BE5E7E200FC764B /* UILabel+Extension.m */,
 				181C7E7A1BE5F77400FC764B /* UIButton+Extension.h */,
 				181C7E7B1BE5F77400FC764B /* UIButton+Extension.m */,
+				18FC71C31BE8F6DE0098D7F5 /* NSString+Extension.h */,
+				18FC71C41BE8F6DE0098D7F5 /* NSString+Extension.m */,
 			);
 			path = Exsension;
 			sourceTree = "<group>";
@@ -319,6 +330,7 @@
 		189FC56C1BDFBC3900660269 /* Modul */ = {
 			isa = PBXGroup;
 			children = (
+				18FC71B71BE8ECD90098D7F5 /* sendManagerVc */,
 				5144E6EF1BE3BFCF003183CC /* Welcome */,
 				5144E6F41BE3C078003183CC /* oAuth */,
 				18EDDA0F1BE2386C00C63CD2 /* NewFuture */,
@@ -597,6 +609,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		18FC71B71BE8ECD90098D7F5 /* sendManagerVc */ = {
+			isa = PBXGroup;
+			children = (
+				18FC71BF1BE8F54F0098D7F5 /* View */,
+				18FC71B81BE8ECD90098D7F5 /* Controller */,
+			);
+			path = sendManagerVc;
+			sourceTree = "<group>";
+		};
+		18FC71B81BE8ECD90098D7F5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18FC71BC1BE8ED8A0098D7F5 /* SGSendController.h */,
+				18FC71BD1BE8ED8A0098D7F5 /* SGSendController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18FC71BF1BE8F54F0098D7F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18FC71C01BE8F59D0098D7F5 /* SGTitleView.h */,
+				18FC71C11BE8F59D0098D7F5 /* SGTitleView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		497D02C3A27A64C09AE20712 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -807,12 +846,14 @@
 				51D9FB1D1BE47FA0001D5583 /* SGaCordingTool.m in Sources */,
 				5144E6F31BE3BFCF003183CC /* SGWelcomeVc.m in Sources */,
 				5144E7171BE3F7DD003183CC /* MJFoundation.m in Sources */,
+				18FC71BE1BE8ED8A0098D7F5 /* SGSendController.m in Sources */,
 				189FC5B51BDFC2C800660269 /* NSArray+MASAdditions.m in Sources */,
 				5144E7001BE3C313003183CC /* SGAFNTool.m in Sources */,
 				18EDDA1B1BE2530900C63CD2 /* SGUserDefaultTool.m in Sources */,
 				181C7E7F1BE625AE00FC764B /* SGCollectionViewCell.m in Sources */,
 				5144E7191BE3F7DD003183CC /* MJType.m in Sources */,
 				189FC5B41BDFC2C800660269 /* MASViewConstraint.m in Sources */,
+				18FC71C21BE8F59D0098D7F5 /* SGTitleView.m in Sources */,
 				18036E541BE6EC95009907EE /* SGPhotoView.m in Sources */,
 				189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */,
 				189FC5B11BDFC2C800660269 /* MASConstraintMaker.m in Sources */,
@@ -835,6 +876,7 @@
 				181AC9341BE5015700F696CE /* SGStatus.m in Sources */,
 				189FC5B31BDFC2C800660269 /* MASViewAttribute.m in Sources */,
 				5144E6FA1BE3C113003183CC /* SGoAuthVc.m in Sources */,
+				18FC71C51BE8F6DE0098D7F5 /* NSString+Extension.m in Sources */,
 				5144E71D1BE3F7DD003183CC /* NSString+MJExtension.m in Sources */,
 				18EDDA151BE2388500C63CD2 /* SGNewfutureVc.m in Sources */,
 				181C7E791BE5E7E200FC764B /* UILabel+Extension.m in Sources */,

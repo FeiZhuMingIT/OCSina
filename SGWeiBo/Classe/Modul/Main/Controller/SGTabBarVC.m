@@ -11,6 +11,7 @@
 #import "SGDiscoverTableViewVc.h"
 #import "SGProfileTableViewVc.h"
 #import "SGMessageTableViewVc.h"
+#import "SGSendController.h"
 @implementation SGTabBarVC
 
 - (void)viewDidLoad {
@@ -60,7 +61,10 @@
 }
 
 - (void)addBtnClick {
-    NSLog(@"%s",__func__);
+    SGSendController *sendVc = [[SGSendController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:sendVc];
+    [self presentViewController:nav animated:YES completion:nil];
+
 }
 
 - (void)addChildViewController:(UIViewController *)controller image:(NSString *)image title:(NSString *)title {

@@ -14,7 +14,8 @@
 #import "AFHTTPSessionManager.h"
 // 全局 一般这种写法用于通知
 //extern NSString * const kAuthorize;
-
+typedef void(^Success)(id data);
+typedef void(^Falure)(NSError *error);
 // 网络错误枚举
 typedef NS_ENUM(NSInteger, SGNetworkErrorType) {
     SGNetworkErrorTypeEmptyToken = -1,
@@ -34,6 +35,12 @@ typedef NS_ENUM(NSInteger, SGNetworkErrorType) {
 // authorization_code
 @property(nonatomic,strong)NSString *grant_type;
 
+
+// 若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+@property (nonatomic,assign)NSInteger  since_id;
+// 网络请求
+@property (nonatomic,assign)NSInteger  max_id;
+
 //单例对象
 + (instancetype)shareAFNTool;
 
@@ -47,4 +54,8 @@ typedef NS_ENUM(NSInteger, SGNetworkErrorType) {
 
 
 - (NSDictionary *)loadData;
+
+//
+#pragma mark - 网络加载数据2
+- (void)loadNewStatusWithSince_id:(NSInteger)since_id WithMax_id:(NSInteger)max_id Success:(Success)success andFalure:(Falure)falure;
 @end

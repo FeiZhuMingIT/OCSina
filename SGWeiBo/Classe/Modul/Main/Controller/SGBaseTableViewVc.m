@@ -14,6 +14,7 @@
 #import "SGProfileTableViewVc.h"
 #import "SGoAuthVc.h"
 #import "SGUserAccount.h"
+#import "SGSendController.h"
 @interface SGBaseTableViewVc() <SGLoginViewDelegate>
 
 @end

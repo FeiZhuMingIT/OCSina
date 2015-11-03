@@ -11,6 +11,11 @@
 #import "SVProgressHUD.h"
 #import "AppDelegate.h"
 #import "SGWelcomeVc.h"
+#import "SGStatus.h"
+#import "MJExtension.h"
+
+typedef void(^Success)(id data);
+typedef void(^Falure)(NSError *error);
 @interface SGAFNTool()
 @property(nonatomic,strong)SGUserAccount *userAccount;
 @end
@@ -48,6 +53,7 @@ aFNTool = [[self alloc] init];
 
     [self.afnHttpManager POST:@"oauth2/access_token" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
         self.userAccount.access_token = responseObject[@"access_token"];
+        
         self.userAccount.uid = responseObject[@"uid"];
         self.userAccount.expires_in = [responseObject[@"expires_in"] doubleValue];
         // 归档
@@ -81,6 +87,9 @@ aFNTool = [[self alloc] init];
 - (SGUserAccount *)userAccount {
     if (!_userAccount) {
         _userAccount = [SGUserAccount loadAccount];
+        if(_userAccount == nil) {
+            _userAccount  = [[SGUserAccount alloc] init];
+        }
     }
     return _userAccount;
 }
@@ -113,6 +122,30 @@ aFNTool = [[self alloc] init];
 }
 
 
+
+#pragma mark - 网络加载数据2
+- (void)loadNewStatusWithSince_id:(NSInteger)since_id WithMax_id:(NSInteger)max_id Success:(Success)success andFalure:(Falure)falure  {
+    self.userAccount = [SGUserAccount loadAccount];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+
+    parameters[@"access_token"] = self.userAccount.access_token;
+    // 默认为0
+    parameters[@"since_id"] = @(since_id);
+    // 默认为0
+    parameters[@"max_id"] = @(max_id);
+    [self.afnHttpManager GET:@"2/statuses/home_timeline.json" parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        NSLog(@"%@",task);
+        self.userAccount = [SGUserAccount loadAccount];
+        NSArray *dicArr = responseObject[@"statuses"];
+        success(dicArr);
+        
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+        [SVProgressHUD showErrorWithStatus:@"加载错误" maskType:3];
+        falure(error);
+    }];
+}
 
 
 

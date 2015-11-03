@@ -14,6 +14,7 @@
 @property (nonatomic,strong)NSString * text;
 @property (nonatomic,strong)NSString * source;
 @property (nonatomic,strong)NSArray * pic_urls;
+@property (nonatomic,assign)NSInteger  id;
 // 图片数据字典
 @property (nonatomic,strong)NSArray * picUrls;
 @property (nonatomic,strong)SGUser * user;

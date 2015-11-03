@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 // 归档要记得添加
 @interface SGUserAccount : NSObject <NSCoding>
 // uid
