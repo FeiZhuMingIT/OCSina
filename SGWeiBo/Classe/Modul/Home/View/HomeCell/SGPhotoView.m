@@ -38,6 +38,7 @@
 - (void)setupSubViewFrame {
    for (NSInteger index = 0; index < kImageViewCount; index ++) {
        UIImageView *imageViwe = self.subviews[index];
+       imageViwe.contentMode = UIViewContentModeScaleAspectFill;
        CGFloat imageViewX = index % 3 * (kMargin + kImageWidth);
        CGFloat imageViewY = index / 3 * (kMargin + kImageWidth);
        imageViwe.frame = CGRectMake(imageViewX, imageViewY, kImageWidth, kImageWidth);

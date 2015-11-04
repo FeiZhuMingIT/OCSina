@@ -21,6 +21,7 @@
 		181C7E791BE5E7E200FC764B /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E781BE5E7E200FC764B /* UILabel+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		181C7E7C1BE5F77400FC764B /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E7B1BE5F77400FC764B /* UIButton+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		181C7E7F1BE625AE00FC764B /* SGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 181C7E7E1BE625AE00FC764B /* SGCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		18215F501BE9D6F400E32319 /* SGSendToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18215F4F1BE9D6F400E32319 /* SGSendToolBar.m */; settings = {ASSET_TAGS = (); }; };
 		189FC5531BDFBB3000660269 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5521BDFBB3000660269 /* main.m */; };
 		189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 189FC5551BDFBB3000660269 /* AppDelegate.m */; };
 		189FC55E1BDFBB3000660269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189FC55D1BDFBB3000660269 /* Assets.xcassets */; };
@@ -91,6 +92,9 @@
 		181C7E7B1BE5F77400FC764B /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		181C7E7D1BE625AE00FC764B /* SGCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewCell.h; sourceTree = "<group>"; };
 		181C7E7E1BE625AE00FC764B /* SGCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionViewCell.m; sourceTree = "<group>"; };
+		18215F4D1BE9CCAB00E32319 /* SGWeiBo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGWeiBo.h; sourceTree = "<group>"; };
+		18215F4E1BE9D6F400E32319 /* SGSendToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSendToolBar.h; sourceTree = "<group>"; };
+		18215F4F1BE9D6F400E32319 /* SGSendToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSendToolBar.m; sourceTree = "<group>"; };
 		189FC54E1BDFBB3000660269 /* SGWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189FC5521BDFBB3000660269 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		189FC5541BDFBB3000660269 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -287,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				189FC5521BDFBB3000660269 /* main.m */,
+				18215F4D1BE9CCAB00E32319 /* SGWeiBo.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -632,6 +637,8 @@
 			children = (
 				18FC71C01BE8F59D0098D7F5 /* SGTitleView.h */,
 				18FC71C11BE8F59D0098D7F5 /* SGTitleView.m */,
+				18215F4E1BE9D6F400E32319 /* SGSendToolBar.h */,
+				18215F4F1BE9D6F400E32319 /* SGSendToolBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -858,6 +865,7 @@
 				189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */,
 				189FC5B11BDFC2C800660269 /* MASConstraintMaker.m in Sources */,
 				5144E71B1BE3F7DD003183CC /* NSObject+MJKeyValue.m in Sources */,
+				18215F501BE9D6F400E32319 /* SGSendToolBar.m in Sources */,
 				181C7E661BE5B67900FC764B /* SGBottomView.m in Sources */,
 				181C7E691BE5B69100FC764B /* SGTextLabel.m in Sources */,
 				189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */,
@@ -923,6 +931,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SGWeiBo/SGWeiBo.h";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -965,6 +974,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SGWeiBo/SGWeiBo.h";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

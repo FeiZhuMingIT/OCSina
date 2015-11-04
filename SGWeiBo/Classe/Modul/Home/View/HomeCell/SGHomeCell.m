@@ -119,6 +119,7 @@
 
 #pragma mark - set && get
 - (void)setStatus:(SGStatus *)status {
+    
     _status = status;
     self.topView.status = status;
     self.desteilLabel.text = status.text;
