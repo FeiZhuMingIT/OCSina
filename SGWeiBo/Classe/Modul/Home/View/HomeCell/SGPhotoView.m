@@ -11,13 +11,16 @@
 #define kImageViewCount 9
 #define kImageWidth 90
 #define kMargin 10
-
+#define kGifW 27
+#define kGifH 20
 
 
 @interface SGPhotoView()
 
 @property(nonatomic,weak) UIImageView *imageView;
 
+
+@property(nonatomic,weak) UIImageView *gifView;
 @end
 
 @implementation SGPhotoView
@@ -43,6 +46,11 @@
         imageViwe.tag = index;
         imageViwe.userInteractionEnabled = YES;
         [self addSubview:imageViwe];
+        
+        UIImageView *gifView = [[UIImageView alloc] init];
+        [imageViwe addSubview:gifView];
+        gifView.image = [UIImage imageNamed:@"timeline_image_gif"];
+        gifView.hidden = YES;
     }
 }
 
@@ -66,6 +74,9 @@
        CGFloat imageViewX = index % 3 * (kMargin + kImageWidth);
        CGFloat imageViewY = index / 3 * (kMargin + kImageWidth);
        imageViwe.frame = CGRectMake(imageViewX, imageViewY, kImageWidth, kImageWidth);
+       UIImageView *gif = [imageViwe.subviews lastObject];
+       gif.frame = CGRectMake(kImageWidth - kGifW, kImageWidth - kGifH, kGifW, kGifH);
+       
    }
 }
 
@@ -76,8 +87,15 @@
     for (NSInteger index = 0; index < kImageViewCount; index ++) {
         UIImageView *imageView = self.subviews[index];
         if (index < count) {
+            NSString *imagePath = picUrls[index];
+            // 如果有gif就让gifView显示如果没有就不显示
+            if ([imagePath hasSuffix:@"gif"]) {
+                [imageView.subviews lastObject].hidden = NO;
+            } else {
+                [imageView.subviews lastObject].hidden = YES;
+            }
             // 加载图片
-            [imageView sd_setImageWithURL:[NSURL URLWithString:picUrls[index]]];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:imagePath]];
             imageView.hidden = NO;
         } else {
             imageView.hidden = YES;

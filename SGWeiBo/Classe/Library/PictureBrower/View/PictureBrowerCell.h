@@ -13,6 +13,8 @@
 // 需要一张图片url
 @property(nonatomic,copy) NSString *largeString;
 
+@property(nonatomic,weak) UIImageView *imageView;
+
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView IndexPath:(NSIndexPath *)indexPath;
 
 @end

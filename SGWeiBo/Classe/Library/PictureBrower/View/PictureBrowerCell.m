@@ -13,7 +13,7 @@
 
 @property(nonatomic,weak) UIScrollView *scrollerView;
 
-@property(nonatomic,weak) UIImageView *imageView;
+
 @end
 
 @implementation PictureBrowerCell
@@ -71,7 +71,19 @@
 
 // 缩放后调用
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
-    NSLog(@"缩放结束后");
+    NSLog(@"缩放结束");
+//    // 缩放结束后要拿到frame值，让它回到中间
+//    CGRect rect = view.frame;
+//    CGFloat viewW = rect.size.width;
+//    CGFloat viewH = rect.size.height;
+//    CGFloat viewX = 0.5 * (kScreenWidth - viewW);
+//    CGFloat viewY = 0.5 * (kScreenHeight - viewH);
+//    [UIView animateWithDuration:0.5 animations:^{
+//        view.center = CGPointMake(kScreenWidth / 2, kScreenHeight / 2);
+//        view.bounds = CGRectMake(0, 0, viewW, viewH);
+//    }];
+//    NSLog(@"%@",NSStringFromCGRect(CGRectMake(viewX, viewY, viewW, viewH)));
+    
 }
 
 #pragma mark - set & get

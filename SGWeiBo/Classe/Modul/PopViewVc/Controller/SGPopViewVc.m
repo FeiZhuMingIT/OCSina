@@ -19,8 +19,13 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    // 接收标题头弹出的pop控制器的containView被点击的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissController) name:kSGPresentVcContainViewTapGestureClick object:nil];
     
+}
+
+- (void)dismissController {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - tableView数据源方法

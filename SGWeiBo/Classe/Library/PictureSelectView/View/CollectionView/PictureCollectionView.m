@@ -88,8 +88,6 @@
     }
     cell.tag = indexPath.row;
     cell.image = self.imageArr[indexPath.row];
-    
-    
     return cell;
 }
 
@@ -101,13 +99,6 @@
     [self.imageArr removeObject:deleteImage];
     NSLog(@"%@",self.imageArr);
     [self reloadData];
-    // 遍历
-//    for (NSInteger index = 0; index < self.imageArr.count; index ++) {
-//        UIImage *image = self.imageArr[index];
-//        if ([image isEqual:deleteImage]) {
-//            [self.imageArr removeObject:<#(nonnull id)#>];
-//        }
-//    }
 }
 
 

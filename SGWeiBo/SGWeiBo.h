@@ -22,5 +22,6 @@
 
 #define kPictureCollectionViewCellDefaultBtnDidClickNotification @"PictureCollectionViewCellDefaultBtnDidClickNotification"
 #define kPhotoViewImageViewTapGestureNotification @"photoViewImageViewTapGestureNotification"
+#define kSGPresentVcContainViewTapGestureClick @"presentVcContainViewTapGestureClick"
 #define kMAXImage 6
 #endif /* SGWeiBo_h */

@@ -9,6 +9,8 @@
 #import "PictureBrowerCollectionVC.h"
 #import "PictureBrowerCell.h"
 #import "UIButton+Extension.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 #define kTipLabelY 40
 #define kTipLabelH 60
 #define kMarginLeft 30
@@ -30,6 +32,8 @@
 @property(nonatomic,weak) UIButton *backBtn;
 // 保存图片按钮
 @property(nonatomic,weak) UIButton *savaBtn;
+// 当前的cell
+@property(nonatomic,weak) PictureBrowerCell *currentCell;
 @end
 
 @implementation PictureBrowerCollectionVC
@@ -117,6 +121,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PictureBrowerCell *cell = [PictureBrowerCell cellWithCollectionView:collectionView IndexPath:indexPath];
     cell.largeString = self.imageUrls[indexPath.row];
+    self.currentCell = cell;
     return cell;
 }
 #pragma mark - 当停止滑动的时候调用的方法
@@ -134,7 +139,31 @@
 
 #pragma mark - 保存按钮点击时间
 - (void)saveBtnDidClick {
-    NSLog(@"%@",@"点击了保存按钮");
+    NSIndexPath *indexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
+#warning -mark 判断是否可以访问相册
+    // completionTarget: 保存成功或失败,回调这个对象
+    // completionSelector: 回调的方法
+    // - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+    // image didFinishSavingWithError contextInfo : 前面的名称 都相当于swift里面的外部参数名
+    // 放置用户没有看到图片就
+    UIImage *image = self.currentCell.imageView.image;
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error) {
+        [SVProgressHUD showErrorWithStatus:@"保存失败"];
+    } else {
+        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+    }
+}
+
+
+
+
+- (void)compeleSaveImage {
+    
 }
 
 #pragma mark - 退出按钮点击事件

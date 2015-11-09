@@ -57,7 +57,10 @@
     [self setupRefresh];
     [self setupFooterRefresh];
     
+    // 接收图片被单击的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoViewImageViewTapGesture:) name:kPhotoViewImageViewTapGestureNotification object:nil];
+    // 接收标题头弹出的pop控制器的containView被点击的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleBtnStatues) name:kSGPresentVcContainViewTapGestureClick object:nil];
 }
 
 
@@ -70,9 +73,8 @@
     
     PictureBrowerCollectionVC *pictureBrowerVc = [[PictureBrowerCollectionVC alloc] initWithImageUrls:status.largeStrings Index:index];
     [self.navigationController presentViewController:pictureBrowerVc animated:YES completion:nil];
-
-    
 }
+#pragma mark - 接收标题头弹出的pop控制器的containView被点击的通知
 
 #pragma mark - 下拉
 - (void)setupRefresh {
@@ -89,7 +91,6 @@
     // 设置刷新控件
     self.tableView.header = header;
 }
-
 
 #pragma mark - 上拉
 - (void)setupFooterRefresh {
@@ -175,20 +176,23 @@
     
 }
 #pragma mark - 标题按钮点击事件
-- (void)titleBtnDidClick {
-    // 发生旋转
+
+- (void)titleBtnStatues {
     self.titleBtn.selected = !self.titleBtn.selected;
     if (self.titleBtn.selected) {
         // 就近原则
         [UIView animateWithDuration:0.25 animations:^{
-        self.titleBtn.imageView.transform = CGAffineTransformMakeRotation(M_PI - 0.01);
+            self.titleBtn.imageView.transform = CGAffineTransformMakeRotation(M_PI - 0.01);
         }];
     } else {
         [UIView animateWithDuration:0.25 animations:^{
-           self.titleBtn.imageView.transform = CGAffineTransformIdentity;
+            self.titleBtn.imageView.transform = CGAffineTransformIdentity;
         }];
     }
-    
+}
+- (void)titleBtnDidClick {
+    // 发生旋转
+    [self titleBtnStatues];
     // 弹出popView
     UIStoryboard *stroryBoard = [UIStoryboard storyboardWithName:@"SGPopViewVc" bundle:nil];
     SGPopViewVc * popViewVc = [stroryBoard instantiateViewControllerWithIdentifier:@"SGPopViewVc"];
@@ -202,18 +206,15 @@
 }
 
 
+
 #pragma mark - transitioningDelegate代理方法
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
-    NSLog(@"%@",presented);
-    NSLog(@"%@",presenting);
-    NSLog(@"%@",source);
+
     SGPresentVc *presentVc = [[SGPresentVc alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+        
     return presentVc;
 }
-//- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-//    
-////    return presentVc;
-//}
+
 
 #pragma mark - tableView数据源方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
