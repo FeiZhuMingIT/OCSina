@@ -20,6 +20,8 @@
 #import "PictureBrowerCollectionVC.h"
 #import "SGPopViewVc.h"
 #import "SGPresentVc.h"
+#import "SGModalAnimation.h"
+#import "SGDIsmissAnimation.h"
 @interface SGHomeTableViewVc() <UITabBarDelegate,UITableViewDataSource,UIViewControllerTransitioningDelegate>
 @property (nonatomic,weak)UIButton * leftBtn;
 @property (nonatomic,weak)UIButton * rightBtn;
@@ -74,7 +76,6 @@
     PictureBrowerCollectionVC *pictureBrowerVc = [[PictureBrowerCollectionVC alloc] initWithImageUrls:status.largeStrings Index:index];
     [self.navigationController presentViewController:pictureBrowerVc animated:YES completion:nil];
 }
-#pragma mark - 接收标题头弹出的pop控制器的containView被点击的通知
 
 #pragma mark - 下拉
 - (void)setupRefresh {
@@ -208,6 +209,16 @@
 
 
 #pragma mark - transitioningDelegate代理方法
+// 控制model时，动画的返回对象
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    return [[SGModalAnimation alloc] init];
+};
+
+// 控制dismiss时动画的对象
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [[SGDIsmissAnimation alloc] init];
+}
+//返回一个 控制展现(显示) 的对象
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
 
     SGPresentVc *presentVc = [[SGPresentVc alloc] initWithPresentedViewController:presented presentingViewController:presenting];

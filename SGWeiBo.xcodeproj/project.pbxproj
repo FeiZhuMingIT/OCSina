@@ -86,6 +86,8 @@
 		CAD8DA811BF05FAC00B1DEC5 /* SGPopViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA801BF05FAC00B1DEC5 /* SGPopViewVc.m */; settings = {ASSET_TAGS = (); }; };
 		CAD8DA851BF05FDC00B1DEC5 /* SGPopViewVc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD8DA841BF05FDC00B1DEC5 /* SGPopViewVc.storyboard */; settings = {ASSET_TAGS = (); }; };
 		CAD8DA881BF06AD700B1DEC5 /* SGPresentVc.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA871BF06AD700B1DEC5 /* SGPresentVc.m */; settings = {ASSET_TAGS = (); }; };
+		CAD8DA8C1BF0D62D00B1DEC5 /* SGModalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA8B1BF0D62D00B1DEC5 /* SGModalAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		CAD8DA8F1BF0E21400B1DEC5 /* SGDIsmissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA8E1BF0E21400B1DEC5 /* SGDIsmissAnimation.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -250,6 +252,10 @@
 		CAD8DA841BF05FDC00B1DEC5 /* SGPopViewVc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SGPopViewVc.storyboard; sourceTree = "<group>"; };
 		CAD8DA861BF06AD700B1DEC5 /* SGPresentVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPresentVc.h; sourceTree = "<group>"; };
 		CAD8DA871BF06AD700B1DEC5 /* SGPresentVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPresentVc.m; sourceTree = "<group>"; };
+		CAD8DA8A1BF0D62D00B1DEC5 /* SGModalAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGModalAnimation.h; sourceTree = "<group>"; };
+		CAD8DA8B1BF0D62D00B1DEC5 /* SGModalAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGModalAnimation.m; sourceTree = "<group>"; };
+		CAD8DA8D1BF0E21400B1DEC5 /* SGDIsmissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDIsmissAnimation.h; sourceTree = "<group>"; };
+		CAD8DA8E1BF0E21400B1DEC5 /* SGDIsmissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDIsmissAnimation.m; sourceTree = "<group>"; };
 		E95C7EFC96F4CA026C2D23A7 /* Pods-SGWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGWeiBo/Pods-SGWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -284,6 +290,7 @@
 		181AC92B1BE4F5CE00F696CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CAD8DA891BF0D61E00B1DEC5 /* ModelAnimation */,
 				181C7E5D1BE5A99100FC764B /* HomeCell */,
 				181AC92C1BE4F5F900F696CE /* SGHomeBtn.h */,
 				181AC92D1BE4F5F900F696CE /* SGHomeBtn.m */,
@@ -985,6 +992,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CAD8DA891BF0D61E00B1DEC5 /* ModelAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8DA8A1BF0D62D00B1DEC5 /* SGModalAnimation.h */,
+				CAD8DA8B1BF0D62D00B1DEC5 /* SGModalAnimation.m */,
+				CAD8DA8D1BF0E21400B1DEC5 /* SGDIsmissAnimation.h */,
+				CAD8DA8E1BF0E21400B1DEC5 /* SGDIsmissAnimation.m */,
+			);
+			path = ModelAnimation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1114,6 +1132,7 @@
 				5144E7031BE3E564003183CC /* SGUserAccount.m in Sources */,
 				51D9FB1D1BE47FA0001D5583 /* SGaCordingTool.m in Sources */,
 				CA2AC25C1BEE2D7500368992 /* EmotionAttachment.m in Sources */,
+				CAD8DA8C1BF0D62D00B1DEC5 /* SGModalAnimation.m in Sources */,
 				CA2AC2581BEE2D7500368992 /* Emotion.m in Sources */,
 				CA2AC25B1BEE2D7500368992 /* EmoticonsPackage.m in Sources */,
 				CAAA34A31BEF749100868C49 /* SGSelectView.m in Sources */,
@@ -1179,6 +1198,7 @@
 				189FC5B21BDFC2C800660269 /* MASLayoutConstraint.m in Sources */,
 				CAAA34971BEF73B000868C49 /* UIImage+Extension.m in Sources */,
 				189FC5881BDFBCF200660269 /* SGTabBarVC.m in Sources */,
+				CAD8DA8F1BF0E21400B1DEC5 /* SGDIsmissAnimation.m in Sources */,
 				189FC5911BDFBE9D00660269 /* SGMessageTableViewVc.m in Sources */,
 				181AC9371BE504F500F696CE /* SGUserAccountData.m in Sources */,
 				189FC5531BDFBB3000660269 /* main.m in Sources */,
