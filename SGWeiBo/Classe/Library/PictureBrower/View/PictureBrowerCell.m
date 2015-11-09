@@ -18,12 +18,27 @@
 
 @implementation PictureBrowerCell
 
-+ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView IndexPath:(NSIndexPath *)indexPath {
-    PictureBrowerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kPictureBrowerCellIdentifier forIndexPath:indexPath];
-    [cell setupSubView];
-    return cell;
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setupSubView];
+    }
+    return self;
 }
 
++ (instancetype)cellWithCollectionView:(UICollectionView *)collectionView IndexPath:(NSIndexPath *)indexPath {
+    PictureBrowerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kPictureBrowerCellIdentifier forIndexPath:indexPath];
+    [cell resetProperties];
+    
+    return cell;
+}
+#pragma mark - 清除属性防止复用
+- (void)resetProperties {
+    self.imageView.transform = CGAffineTransformIdentity;
+    
+    self.scrollerView.contentInset = UIEdgeInsetsZero;
+    self.scrollerView.contentOffset = CGPointZero;
+
+}
 // 在collectionView上面添加一个UIScrollView
 - (void)setupSubView {
     UIScrollView *scrollerView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
@@ -56,7 +71,9 @@
         self.scrollerView.contentSize = CGSizeMake(width, height);
         self.scrollerView.bounces = YES;
     } else {
-        self.imageView.frame = CGRectMake(0, 0.5 * (kScreenHeight - height), width, height);
+        // 这里不能用frame因为用frame会很坑爹，只能让scrollerView的约束防止它乱走
+        self.imageView.frame = CGRectMake(0, 0, width, height);
+        self.scrollerView.contentInset = UIEdgeInsetsMake( 0.5 * (kScreenHeight - height), 0,  0.5 * (kScreenHeight - height), 0);
         self.scrollerView.bounces = NO;
     }
 }
@@ -65,6 +82,7 @@
     return self.imageView;
 }
 // 缩放时调用
+
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
     NSLog(@"缩放时");
 }
@@ -72,18 +90,25 @@
 // 缩放后调用
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale {
     NSLog(@"缩放结束");
-//    // 缩放结束后要拿到frame值，让它回到中间
-//    CGRect rect = view.frame;
-//    CGFloat viewW = rect.size.width;
-//    CGFloat viewH = rect.size.height;
-//    CGFloat viewX = 0.5 * (kScreenWidth - viewW);
-//    CGFloat viewY = 0.5 * (kScreenHeight - viewH);
-//    [UIView animateWithDuration:0.5 animations:^{
-//        view.center = CGPointMake(kScreenWidth / 2, kScreenHeight / 2);
-//        view.bounds = CGRectMake(0, 0, viewW, viewH);
-//    }];
-//    NSLog(@"%@",NSStringFromCGRect(CGRectMake(viewX, viewY, viewW, viewH)));
-    
+    CGFloat offerY = (self.scrollerView.bounds.size.height- self.imageView.frame.size.height) * 0.5;
+    CGFloat offerX = (self.scrollerView.bounds.size.width - self.imageView.frame.size.width ) * 0.5;
+    // 目的就是不让它出去，一出去了就拖动不动了
+    if (offerY < 0) {
+        offerY = 0;
+    }
+    if (offerX < 0) {
+        offerX = 0;
+    }
+    [UIView animateWithDuration:0.25 animations:^{
+        NSLog(@"%lf",offerY);
+     
+        // 设置scrollView的contentInset来居中图片
+//        self.imageView.frame = CGRectMake(offerX, offerY, kScreenWidth - 2 * offerX, kScreenHeight - 2 * offerY);
+        self.scrollerView.contentInset = UIEdgeInsetsMake(offerY, offerX, offerY, offerX);
+//        self.scrollerView.contentOffset = CGPointMake(offerX, offerY);
+           NSLog(@"%@",NSStringFromCGRect(self.imageView.frame));
+        NSLog(@"%@",NSStringFromCGRect(self.scrollerView.frame));
+    }];
 }
 
 #pragma mark - set & get
