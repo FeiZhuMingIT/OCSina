@@ -11,4 +11,8 @@
 @interface UIButton (Extension)
 
 - (instancetype)initWithTitle:(NSString *)title bgColor:(UIColor *)color imageName:(NSString *)imageName;
+
++ (instancetype)buttonWIthBgNorImage:(NSString *)norimageName WithHeilight:(NSString *)heiLightImageName WithFram:(CGRect)rect;
+
++ (instancetype)buttonWithTitle:(NSString *)title norImage:(NSString *)norImage heilightImage:(NSString *)heilightImage;
 @end

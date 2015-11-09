@@ -16,8 +16,11 @@
 #import "MJExtension.h"
 #import "SGAFNTool.h"
 #import "SVProgressHUD.h"
-#import <MJRefresh.h>
-@interface SGHomeTableViewVc() <UITabBarDelegate,UITableViewDataSource>
+#import "MJRefresh.h"
+#import "PictureBrowerCollectionVC.h"
+#import "SGPopViewVc.h"
+#import "SGPresentVc.h"
+@interface SGHomeTableViewVc() <UITabBarDelegate,UITableViewDataSource,UIViewControllerTransitioningDelegate>
 @property (nonatomic,weak)UIButton * leftBtn;
 @property (nonatomic,weak)UIButton * rightBtn;
 @property (nonatomic,weak)UIButton * titleBtn;
@@ -30,6 +33,8 @@
 
 // 提示刷新了多少条的button
 @property (nonatomic,strong)UIButton * updataBtn;
+
+//
 @end
 
 @implementation SGHomeTableViewVc
@@ -44,22 +49,32 @@
     [self setupTableView];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//    self.tableView.rowHeight = 500;
-    
-    
-//    [self loadNewStatus];
     
     // 注册一个cell
     [self.tableView registerClass:[SGHomeCell class] forCellReuseIdentifier:@"homeCell"];
     
-    
     // 集成刷新控件
-   [self setupRefresh];
+    [self setupRefresh];
     [self setupFooterRefresh];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(photoViewImageViewTapGesture:) name:kPhotoViewImageViewTapGestureNotification object:nil];
 }
 
 
-#pragma mark - 上拉
+#pragma mark - 单击图片cell点击的通知
+- (void)photoViewImageViewTapGesture:(NSNotification *)notification {
+    NSDictionary *objectDic = notification.object;
+    SGStatus *status = [[SGStatus alloc] init];
+    status.picUrls = objectDic[@"picUrls"];
+    NSInteger index = [objectDic[@"imageViewTag"] integerValue];
+    
+    PictureBrowerCollectionVC *pictureBrowerVc = [[PictureBrowerCollectionVC alloc] initWithImageUrls:status.largeStrings Index:index];
+    [self.navigationController presentViewController:pictureBrowerVc animated:YES completion:nil];
+
+    
+}
+
+#pragma mark - 下拉
 - (void)setupRefresh {
     // 1.上拉刷新(进入刷新状态就会调用self的headerRereshing)
      MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
@@ -76,7 +91,7 @@
 }
 
 
-#pragma mark - 下拉
+#pragma mark - 上拉
 - (void)setupFooterRefresh {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadMoreData方法）
       MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
@@ -104,12 +119,12 @@
 
 - (void)loadMoreData {
     // 刷新表格
-    SGStatus * status= [self.statuses firstObject];
+    SGStatus * status= [self.statuses lastObject];
     if (status == nil) {
         [self loadNewWorkWithSince_id:0 withMax_id:0];
     } else {
         NSInteger max_id = status.id;
-        [self loadNewWorkWithSince_id:0 withMax_id:max_id];
+        [self loadNewWorkWithSince_id:0 withMax_id:max_id - 1];
     }
     
     // 拿到当前的上拉刷新控件，结束刷新状态
@@ -159,7 +174,7 @@
 
     
 }
-
+#pragma mark - 标题按钮点击事件
 - (void)titleBtnDidClick {
     // 发生旋转
     self.titleBtn.selected = !self.titleBtn.selected;
@@ -173,8 +188,32 @@
            self.titleBtn.imageView.transform = CGAffineTransformIdentity;
         }];
     }
+    
+    // 弹出popView
+    UIStoryboard *stroryBoard = [UIStoryboard storyboardWithName:@"SGPopViewVc" bundle:nil];
+    SGPopViewVc * popViewVc = [stroryBoard instantiateViewControllerWithIdentifier:@"SGPopViewVc"];
+    // 设置转换控制器的代理
+    popViewVc.transitioningDelegate = self;
+    // 设置modal的样式
+    popViewVc.modalPresentationStyle = UIModalPresentationCustom;
+
+//    popViewVc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.navigationController presentViewController:popViewVc animated:YES completion:nil];
 }
 
+
+#pragma mark - transitioningDelegate代理方法
+- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
+    NSLog(@"%@",presented);
+    NSLog(@"%@",presenting);
+    NSLog(@"%@",source);
+    SGPresentVc *presentVc = [[SGPresentVc alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+    return presentVc;
+}
+//- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+//    
+////    return presentVc;
+//}
 
 #pragma mark - tableView数据源方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -226,6 +265,7 @@
 - (void)rightBtnClick {
     
 }
+
 - (SGUserAccount *)userAccount {
     if (_userAccount == nil) {
         _userAccount = [SGUserAccount loadAccount];
@@ -298,6 +338,5 @@
            self.updataBtn.hidden = YES;
         }];
     }];
-    
 }
 @end

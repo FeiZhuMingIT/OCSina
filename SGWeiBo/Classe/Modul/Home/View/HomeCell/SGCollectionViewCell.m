@@ -25,10 +25,6 @@
 - (void)setupSubView {
     UIImageView *imageView = [[UIImageView alloc] init];
     self.imageView = imageView;
-//    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self);
-//        make.size.equalTo(self)
-//    }];
     [self.contentView addSubview:imageView];
 }
 

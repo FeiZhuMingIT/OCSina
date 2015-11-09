@@ -43,6 +43,9 @@
 + (instancetype)homeCellWithTableView:(UITableView *)tableView {
     static NSString *ID = @"homeCell";
     SGHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+#warning 这不让用户选中cell 以后替换
+    // 不让用户选中cell
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (!cell) {
         cell = [[self alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID] ;
     }
@@ -73,10 +76,6 @@
     self.desteilLabel = desteilLabel;
     [self addSubview:desteilLabel];
     
-//    SGPictureView *pictureView = [[SGPictureView alloc] init];
-//    self.pictureView = pictureView;
-//
-//    [self addSubview:pictureView];
     SGPhotoView *photo = [[SGPhotoView alloc] init];
     self.photoView = photo;
     [self addSubview:photo];
@@ -99,11 +98,6 @@
         make.width.mas_equalTo([UIScreen mainScreen].bounds.size.width -2 *8);
     }];
     
-//    [self.pictureView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.desteilLabel.mas_bottom).with.offset(8);
-//        make.left.equalTo(self.mas_left).with.offset(8);
-////        make.size.mas_equalTo(CGSizeMake(300, 300));
-//    }];
     [self.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.desteilLabel.mas_bottom).with.offset(8);
         make.left.equalTo(self.mas_left).with.offset(8);

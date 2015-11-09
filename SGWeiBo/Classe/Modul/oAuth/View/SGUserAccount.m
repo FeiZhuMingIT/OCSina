@@ -12,10 +12,6 @@
 @property(nonatomic,strong)NSString *accountPath;
 @end
 @implementation SGUserAccount
-
-
-
-
 #pragma mark - 归档 解档 保存和解档数据
 // 归档
 - (void)encodeWithCoder:(NSCoder *)aCoder {
@@ -39,6 +35,7 @@
 - (void)saveAccount {
     [NSKeyedArchiver archiveRootObject:self toFile:kAccountPath];
 }
+
 + (instancetype)loadAccount {
     //  解档是一个消耗性能的操作，如果系统缓存中有了就不需要再解档了
     static SGUserAccount *userAccount;

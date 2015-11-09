@@ -13,6 +13,7 @@
 #import "SGWelcomeVc.h"
 #import "SGoAuthVc.h"
 #import "SGUserAccount.h"
+#import "SGSendController.h"
 #define kVersionKey @"CFBundleShortVersionString"
 @interface AppDelegate ()
 
@@ -46,6 +47,8 @@
         }
     } else { // 不是登陆
         SGTabBarVC *tabbarVc = [[SGTabBarVC alloc] init];
+//        return [[UINavigationController alloc] initWithRootViewController:[[SGSendController alloc] init]];
+    
         return tabbarVc;
     }
 }

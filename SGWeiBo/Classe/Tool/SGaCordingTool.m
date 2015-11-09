@@ -16,7 +16,5 @@
     [NSKeyedArchiver archiveRootObject:object toFile:aCodringPath];
 }
 
-//+ (instancetype)unarchiverWithfileName:(NSString *)fileName {
-//   id  [[NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
-//}
+
 @end

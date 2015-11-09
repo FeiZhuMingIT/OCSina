@@ -20,4 +20,19 @@
     return self;
 }
 
+
++ (instancetype)buttonWIthBgNorImage:(NSString *)norimageName WithHeilight:(NSString *)heiLightImageName WithFram:(CGRect)rect {
+    UIButton *button = [[UIButton alloc] initWithFrame:rect];
+    [button setBackgroundImage:[UIImage imageNamed:norimageName] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:heiLightImageName] forState:UIControlStateHighlighted];
+    return button;
+}
+
++ (instancetype)buttonWithTitle:(NSString *)title norImage:(NSString *)norImage heilightImage:(NSString *)heilightImage {
+    UIButton *button = [[UIButton alloc] init];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:norImage] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:heilightImage] forState:UIControlStateHighlighted];
+    return button;
+}
 @end

@@ -55,6 +55,9 @@ typedef NS_ENUM(NSInteger, SGNetworkErrorType) {
 
 - (NSDictionary *)loadData;
 
+// 发送微博 只能发送一张
+- (void)sendStatusWithImage:(UIImage *)image statues:(NSString *)statues success:(Success)success falure:(Falure)falure;
+
 //
 #pragma mark - 网络加载数据2
 - (void)loadNewStatusWithSince_id:(NSInteger)since_id WithMax_id:(NSInteger)max_id Success:(Success)success andFalure:(Falure)falure;

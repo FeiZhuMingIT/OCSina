@@ -147,6 +147,39 @@ aFNTool = [[self alloc] init];
     }];
 }
 
-
+#pragma mark 发送微博
+- (void)sendStatusWithImage:(UIImage *)image statues:(NSString *)statues success:(Success)success falure:(Falure)falure {
+    SGUserAccount *userAccount = [SGUserAccount loadAccount];
+    // token有值, 拼接参数
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"access_token"] = userAccount.access_token;
+    parameters[@"status"] = statues;
+    if (image == nil) { // 发送没有图片的微博
+        NSString *strUrl = @"2/statuses/update.json";
+        [self.afnHttpManager POST:strUrl parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+            success(responseObject);
+        } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+            falure(error);
+        }];
+    } else { // 当图片不是nil
+        NSString *sendImageStatuesUrl = @"https://upload.api.weibo.com/2/statuses/upload.json";
+        [self.afnHttpManager POST:sendImageStatuesUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            // 添加图片的二进制
+            NSData *imageData = UIImagePNGRepresentation(image);
+            // data: 上传图片的2进制
+            // name: api 上面写的传递参数名称 "pic"
+            // fileName: 上传到服务器后,保存的名称,没有指定可以随便写
+            // mimeType: 资源类型:
+            // image/png
+            // image/jpeg
+            // image/gif
+            [formData appendPartWithFileData:imageData name:@"pic" fileName:@"SB" mimeType:@"image/png"];
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+            success(responseObject);
+        } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+            falure(error);
+        }];
+    }
+}
 
 @end

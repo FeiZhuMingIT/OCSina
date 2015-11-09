@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Pop View Vc-->
+        <scene sceneID="zO5-SJ-iaX">
+            <objects>
+                <viewController storyboardIdentifier="SGPopViewVc" id="Lno-Qw-Veo" customClass="SGPopViewVc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LfK-aQ-gIw"/>
+                        <viewControllerLayoutGuide type="bottom" id="FIr-g6-0Nt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fkK-Z3-ykd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover_background" translatesAutoresizingMaskIntoConstraints="NO" id="SeU-de-wwi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vwb-98-O5E">
+                                <rect key="frame" x="10" y="35" width="580" height="555"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="popViewCell" id="lh5-Il-2dW">
+                                        <rect key="frame" x="0.0" y="28" width="580" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lh5-Il-2dW" id="A1m-jJ-HFj">
+                                            <rect key="frame" x="0.0" y="0.0" width="580" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="SeU-de-wwi" secondAttribute="trailing" id="3eR-W1-aqk"/>
+                            <constraint firstItem="Vwb-98-O5E" firstAttribute="leading" secondItem="fkK-Z3-ykd" secondAttribute="leading" constant="10" id="5Qn-X0-cmh"/>
+                            <constraint firstAttribute="trailing" secondItem="Vwb-98-O5E" secondAttribute="trailing" constant="10" id="AuH-y1-ee2"/>
+                            <constraint firstItem="SeU-de-wwi" firstAttribute="leading" secondItem="fkK-Z3-ykd" secondAttribute="leading" id="M4e-US-Lbs"/>
+                            <constraint firstItem="SeU-de-wwi" firstAttribute="top" secondItem="fkK-Z3-ykd" secondAttribute="top" id="Yys-0K-1Xp"/>
+                            <constraint firstItem="FIr-g6-0Nt" firstAttribute="top" secondItem="SeU-de-wwi" secondAttribute="bottom" id="gmV-DV-pgI"/>
+                            <constraint firstItem="Vwb-98-O5E" firstAttribute="top" secondItem="LfK-aQ-gIw" secondAttribute="bottom" constant="15" id="iZP-Cm-TfH"/>
+                            <constraint firstItem="FIr-g6-0Nt" firstAttribute="top" secondItem="Vwb-98-O5E" secondAttribute="bottom" constant="10" id="mtn-34-X8b"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="popoverImageView" destination="SeU-de-wwi" id="EoM-4M-35K"/>
+                        <outlet property="tableView" destination="Vwb-98-O5E" id="y5Z-AS-oVK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Azz-dP-vnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="-80"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="popover_background" width="121" height="49"/>
+    </resources>
+</document>

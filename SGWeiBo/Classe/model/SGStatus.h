@@ -9,16 +9,27 @@
 #import <Foundation/Foundation.h>
 @class SGUser;
 @interface SGStatus : NSObject
-@property (nonatomic,strong)NSString * created_at;
-@property (nonatomic,strong)NSString * idstr;
-@property (nonatomic,strong)NSString * text;
-@property (nonatomic,strong)NSString * source;
-@property (nonatomic,strong)NSArray * pic_urls;
+@property (nonatomic,copy)NSString *created_at;
+@property (nonatomic,copy)NSString *idstr;
+@property (nonatomic,copy)NSString *text;
+@property (nonatomic,copy)NSString *source;
+@property (nonatomic,strong)NSArray *pic_urls;
 @property (nonatomic,assign)NSInteger  id;
 // 图片数据字典
 @property (nonatomic,strong)NSArray * picUrls;
+/*
+ thumbnail_pic   :	ww2.sinaimg.cn/thumbnail    /8debe637gw1exs55ik582j20cs0mtgoi.jpg
+ bmiddle_pic     :	ww2.sinaimg.cn/bmiddle      /8debe637gw1exs55ik582j20cs0mtgoi.jpg
+ original_pic    :	ww2.sinaimg.cn/large        /8debe637gw1exs55ik582j20cs0mtgoi.jpg
+ 
+ geo	:	null
+ 
+ */
+// 把小图地址编程large 和bmiddle就变成了大图地址
+@property(nonatomic,copy) NSArray *bmiddleStrings;
+@property(nonatomic,copy) NSArray *largeStrings;
 @property (nonatomic,strong)SGUser * user;
 
 // 先模拟数据
-+ (NSArray *)loadStatusData;
+//+ (NSArray *)loadStatusData;
 @end

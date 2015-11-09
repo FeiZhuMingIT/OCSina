@@ -12,6 +12,14 @@
 #define kImageWidth 90
 #define kMargin 10
 
+
+
+@interface SGPhotoView()
+
+@property(nonatomic,weak) UIImageView *imageView;
+
+@end
+
 @implementation SGPhotoView
 
 - (instancetype)init
@@ -29,16 +37,32 @@
 - (void)setupSubView {
     for (NSInteger index = 0; index < kImageViewCount; index ++) {
         UIImageView *imageViwe = [[UIImageView alloc] init];
+        // 添加单击手势
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTapGestureClick:)];
+        imageViwe.gestureRecognizers = @[tapGesture];
         imageViwe.tag = index;
+        imageViwe.userInteractionEnabled = YES;
         [self addSubview:imageViwe];
     }
 }
 
+- (void)imageTapGestureClick:(UITapGestureRecognizer *)tapgesture {
+    // 传一个字典出去吧
+    NSDictionary *dic = @{@"picUrls" : self.picUrls, @"imageViewTag":@([(UIImageView *)tapgesture.view tag])};
+    // 用代理传出去不好，用block吧block传不出去给控制器 ,通知吧
+    [[NSNotificationCenter defaultCenter] postNotificationName:kPhotoViewImageViewTapGestureNotification object:dic];
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+    NSLog(@"%s",__func__);
+}
 
 - (void)setupSubViewFrame {
    for (NSInteger index = 0; index < kImageViewCount; index ++) {
        UIImageView *imageViwe = self.subviews[index];
-       imageViwe.contentMode = UIViewContentModeScaleAspectFill;
+       imageViwe.contentMode = UIViewContentModeScaleToFill;
        CGFloat imageViewX = index % 3 * (kMargin + kImageWidth);
        CGFloat imageViewY = index / 3 * (kMargin + kImageWidth);
        imageViwe.frame = CGRectMake(imageViewX, imageViewY, kImageWidth, kImageWidth);

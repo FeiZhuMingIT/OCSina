@@ -62,6 +62,30 @@
 		5144E71D1BE3F7DD003183CC /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5144E7151BE3F7DD003183CC /* NSString+MJExtension.m */; settings = {ASSET_TAGS = (); }; };
 		51D9FB1D1BE47FA0001D5583 /* SGaCordingTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D9FB1C1BE47FA0001D5583 /* SGaCordingTool.m */; settings = {ASSET_TAGS = (); }; };
 		BCE9B5A11A01E29782B2765A /* libPods-SGWeiBo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9274BBE277DBFC7F09F420A /* libPods-SGWeiBo.a */; };
+		CA2AC2581BEE2D7500368992 /* Emotion.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2391BEE2D7500368992 /* Emotion.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC2591BEE2D7500368992 /* SGEmotionVc.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC23B1BEE2D7500368992 /* SGEmotionVc.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC25A1BEE2D7500368992 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CA2AC23C1BEE2D7500368992 /* Emoticons.bundle */; settings = {ASSET_TAGS = (); }; };
+		CA2AC25B1BEE2D7500368992 /* EmoticonsPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC23F1BEE2D7500368992 /* EmoticonsPackage.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC25C1BEE2D7500368992 /* EmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2411BEE2D7500368992 /* EmotionAttachment.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC25D1BEE2D7500368992 /* SGEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2431BEE2D7500368992 /* SGEmotionAttachment.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC25E1BEE2D7500368992 /* EmtionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2461BEE2D7500368992 /* EmtionTool.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC25F1BEE2D7500368992 /* emotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC24A1BEE2D7500368992 /* emotionCell.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC2601BEE2D7500368992 /* EmotionToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC24C1BEE2D7500368992 /* EmotionToolBar.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC2611BEE2D7500368992 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC24F1BEE2D7500368992 /* SGCollectionViewFlowLayout.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC2621BEE2D7500368992 /* SGEmotionCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2511BEE2D7500368992 /* SGEmotionCollectionView.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC2631BEE2D7500368992 /* SGEmotionKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2531BEE2D7500368992 /* SGEmotionKeyBoard.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC2641BEE2D7500368992 /* SGEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2551BEE2D7500368992 /* SGEmotionTextView.m */; settings = {ASSET_TAGS = (); }; };
+		CA2AC2651BEE2D7500368992 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2571BEE2D7500368992 /* UIView+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		CAAA34971BEF73B000868C49 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA34961BEF73B000868C49 /* UIImage+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		CAAA34A11BEF749100868C49 /* PictureCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA349C1BEF749100868C49 /* PictureCollectionView.m */; settings = {ASSET_TAGS = (); }; };
+		CAAA34A21BEF749100868C49 /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA349E1BEF749100868C49 /* PictureCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		CAAA34A31BEF749100868C49 /* SGSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA34A01BEF749100868C49 /* SGSelectView.m */; settings = {ASSET_TAGS = (); }; };
+		CAB2C8771BEFBAEC002DABFD /* PictureBrowerCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2C8711BEFBAEC002DABFD /* PictureBrowerCollectionVC.m */; settings = {ASSET_TAGS = (); }; };
+		CAB2C8781BEFBAEC002DABFD /* PictureBrowerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2C8741BEFBAEC002DABFD /* PictureBrowerCell.m */; settings = {ASSET_TAGS = (); }; };
+		CAB2C8791BEFBAEC002DABFD /* PicturenBrowerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2C8761BEFBAEC002DABFD /* PicturenBrowerCollectionView.m */; settings = {ASSET_TAGS = (); }; };
+		CAD8DA811BF05FAC00B1DEC5 /* SGPopViewVc.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA801BF05FAC00B1DEC5 /* SGPopViewVc.m */; settings = {ASSET_TAGS = (); }; };
+		CAD8DA851BF05FDC00B1DEC5 /* SGPopViewVc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD8DA841BF05FDC00B1DEC5 /* SGPopViewVc.storyboard */; settings = {ASSET_TAGS = (); }; };
+		CAD8DA881BF06AD700B1DEC5 /* SGPresentVc.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA871BF06AD700B1DEC5 /* SGPresentVc.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +204,52 @@
 		51D9FB1B1BE47FA0001D5583 /* SGaCordingTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGaCordingTool.h; sourceTree = "<group>"; };
 		51D9FB1C1BE47FA0001D5583 /* SGaCordingTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGaCordingTool.m; sourceTree = "<group>"; };
 		C9274BBE277DBFC7F09F420A /* libPods-SGWeiBo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SGWeiBo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2AC2381BEE2D7500368992 /* Emotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emotion.h; sourceTree = "<group>"; };
+		CA2AC2391BEE2D7500368992 /* Emotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emotion.m; sourceTree = "<group>"; };
+		CA2AC23A1BEE2D7500368992 /* SGEmotionVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmotionVc.h; sourceTree = "<group>"; };
+		CA2AC23B1BEE2D7500368992 /* SGEmotionVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmotionVc.m; sourceTree = "<group>"; };
+		CA2AC23C1BEE2D7500368992 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		CA2AC23E1BEE2D7500368992 /* EmoticonsPackage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmoticonsPackage.h; sourceTree = "<group>"; };
+		CA2AC23F1BEE2D7500368992 /* EmoticonsPackage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmoticonsPackage.m; sourceTree = "<group>"; };
+		CA2AC2401BEE2D7500368992 /* EmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionAttachment.h; sourceTree = "<group>"; };
+		CA2AC2411BEE2D7500368992 /* EmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionAttachment.m; sourceTree = "<group>"; };
+		CA2AC2421BEE2D7500368992 /* SGEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmotionAttachment.h; sourceTree = "<group>"; };
+		CA2AC2431BEE2D7500368992 /* SGEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmotionAttachment.m; sourceTree = "<group>"; };
+		CA2AC2451BEE2D7500368992 /* EmtionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmtionTool.h; sourceTree = "<group>"; };
+		CA2AC2461BEE2D7500368992 /* EmtionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmtionTool.m; sourceTree = "<group>"; };
+		CA2AC2491BEE2D7500368992 /* emotionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emotionCell.h; sourceTree = "<group>"; };
+		CA2AC24A1BEE2D7500368992 /* emotionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emotionCell.m; sourceTree = "<group>"; };
+		CA2AC24B1BEE2D7500368992 /* EmotionToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionToolBar.h; sourceTree = "<group>"; };
+		CA2AC24C1BEE2D7500368992 /* EmotionToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionToolBar.m; sourceTree = "<group>"; };
+		CA2AC24E1BEE2D7500368992 /* SGCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		CA2AC24F1BEE2D7500368992 /* SGCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		CA2AC2501BEE2D7500368992 /* SGEmotionCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmotionCollectionView.h; sourceTree = "<group>"; };
+		CA2AC2511BEE2D7500368992 /* SGEmotionCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmotionCollectionView.m; sourceTree = "<group>"; };
+		CA2AC2521BEE2D7500368992 /* SGEmotionKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmotionKeyBoard.h; sourceTree = "<group>"; };
+		CA2AC2531BEE2D7500368992 /* SGEmotionKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmotionKeyBoard.m; sourceTree = "<group>"; };
+		CA2AC2541BEE2D7500368992 /* SGEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmotionTextView.h; sourceTree = "<group>"; };
+		CA2AC2551BEE2D7500368992 /* SGEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmotionTextView.m; sourceTree = "<group>"; };
+		CA2AC2561BEE2D7500368992 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		CA2AC2571BEE2D7500368992 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		CAAA34951BEF73B000868C49 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		CAAA34961BEF73B000868C49 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		CAAA349B1BEF749100868C49 /* PictureCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionView.h; sourceTree = "<group>"; };
+		CAAA349C1BEF749100868C49 /* PictureCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionView.m; sourceTree = "<group>"; };
+		CAAA349D1BEF749100868C49 /* PictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewCell.h; sourceTree = "<group>"; };
+		CAAA349E1BEF749100868C49 /* PictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewCell.m; sourceTree = "<group>"; };
+		CAAA349F1BEF749100868C49 /* SGSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSelectView.h; sourceTree = "<group>"; };
+		CAAA34A01BEF749100868C49 /* SGSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSelectView.m; sourceTree = "<group>"; };
+		CAB2C8701BEFBAEC002DABFD /* PictureBrowerCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureBrowerCollectionVC.h; sourceTree = "<group>"; };
+		CAB2C8711BEFBAEC002DABFD /* PictureBrowerCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureBrowerCollectionVC.m; sourceTree = "<group>"; };
+		CAB2C8731BEFBAEC002DABFD /* PictureBrowerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureBrowerCell.h; sourceTree = "<group>"; };
+		CAB2C8741BEFBAEC002DABFD /* PictureBrowerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureBrowerCell.m; sourceTree = "<group>"; };
+		CAB2C8751BEFBAEC002DABFD /* PicturenBrowerCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturenBrowerCollectionView.h; sourceTree = "<group>"; };
+		CAB2C8761BEFBAEC002DABFD /* PicturenBrowerCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturenBrowerCollectionView.m; sourceTree = "<group>"; };
+		CAD8DA7F1BF05FAC00B1DEC5 /* SGPopViewVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPopViewVc.h; sourceTree = "<group>"; };
+		CAD8DA801BF05FAC00B1DEC5 /* SGPopViewVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPopViewVc.m; sourceTree = "<group>"; };
+		CAD8DA841BF05FDC00B1DEC5 /* SGPopViewVc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SGPopViewVc.storyboard; sourceTree = "<group>"; };
+		CAD8DA861BF06AD700B1DEC5 /* SGPresentVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPresentVc.h; sourceTree = "<group>"; };
+		CAD8DA871BF06AD700B1DEC5 /* SGPresentVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPresentVc.m; sourceTree = "<group>"; };
 		E95C7EFC96F4CA026C2D23A7 /* Pods-SGWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGWeiBo/Pods-SGWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +321,8 @@
 				181C7E7B1BE5F77400FC764B /* UIButton+Extension.m */,
 				18FC71C31BE8F6DE0098D7F5 /* NSString+Extension.h */,
 				18FC71C41BE8F6DE0098D7F5 /* NSString+Extension.m */,
+				CAAA34951BEF73B000868C49 /* UIImage+Extension.h */,
+				CAAA34961BEF73B000868C49 /* UIImage+Extension.m */,
 			);
 			path = Exsension;
 			sourceTree = "<group>";
@@ -311,6 +383,9 @@
 		189FC56A1BDFBC3900660269 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				CAB2C86E1BEFBAEC002DABFD /* PictureBrower */,
+				CAAA34981BEF749100868C49 /* PictureSelectView */,
+				CA2AC2351BEE2D7500368992 /* Emotion */,
 				5144E7041BE3F7DD003183CC /* MJExtension */,
 				189FC5951BDFC2C800660269 /* Masonry */,
 			);
@@ -335,6 +410,7 @@
 		189FC56C1BDFBC3900660269 /* Modul */ = {
 			isa = PBXGroup;
 			children = (
+				CAD8DA7B1BF05F8600B1DEC5 /* PopViewVc */,
 				18FC71B71BE8ECD90098D7F5 /* sendManagerVc */,
 				5144E6EF1BE3BFCF003183CC /* Welcome */,
 				5144E6F41BE3C078003183CC /* oAuth */,
@@ -617,8 +693,8 @@
 		18FC71B71BE8ECD90098D7F5 /* sendManagerVc */ = {
 			isa = PBXGroup;
 			children = (
-				18FC71BF1BE8F54F0098D7F5 /* View */,
 				18FC71B81BE8ECD90098D7F5 /* Controller */,
+				18FC71BF1BE8F54F0098D7F5 /* View */,
 			);
 			path = sendManagerVc;
 			sourceTree = "<group>";
@@ -725,6 +801,190 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		CA2AC2351BEE2D7500368992 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				CA2AC2361BEE2D7500368992 /* Category */,
+				CA2AC2371BEE2D7500368992 /* Controller */,
+				CA2AC23C1BEE2D7500368992 /* Emoticons.bundle */,
+				CA2AC23D1BEE2D7500368992 /* Model */,
+				CA2AC2441BEE2D7500368992 /* Tool */,
+				CA2AC2471BEE2D7500368992 /* View */,
+			);
+			path = Emotion;
+			sourceTree = "<group>";
+		};
+		CA2AC2361BEE2D7500368992 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		CA2AC2371BEE2D7500368992 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA2AC2381BEE2D7500368992 /* Emotion.h */,
+				CA2AC2391BEE2D7500368992 /* Emotion.m */,
+				CA2AC23A1BEE2D7500368992 /* SGEmotionVc.h */,
+				CA2AC23B1BEE2D7500368992 /* SGEmotionVc.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CA2AC23D1BEE2D7500368992 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA2AC23E1BEE2D7500368992 /* EmoticonsPackage.h */,
+				CA2AC23F1BEE2D7500368992 /* EmoticonsPackage.m */,
+				CA2AC2401BEE2D7500368992 /* EmotionAttachment.h */,
+				CA2AC2411BEE2D7500368992 /* EmotionAttachment.m */,
+				CA2AC2421BEE2D7500368992 /* SGEmotionAttachment.h */,
+				CA2AC2431BEE2D7500368992 /* SGEmotionAttachment.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA2AC2441BEE2D7500368992 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				CA2AC2451BEE2D7500368992 /* EmtionTool.h */,
+				CA2AC2461BEE2D7500368992 /* EmtionTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		CA2AC2471BEE2D7500368992 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA2AC2481BEE2D7500368992 /* Emotion */,
+				CA2AC2491BEE2D7500368992 /* emotionCell.h */,
+				CA2AC24A1BEE2D7500368992 /* emotionCell.m */,
+				CA2AC24B1BEE2D7500368992 /* EmotionToolBar.h */,
+				CA2AC24C1BEE2D7500368992 /* EmotionToolBar.m */,
+				CA2AC24D1BEE2D7500368992 /* EmtionCollection */,
+				CA2AC24E1BEE2D7500368992 /* SGCollectionViewFlowLayout.h */,
+				CA2AC24F1BEE2D7500368992 /* SGCollectionViewFlowLayout.m */,
+				CA2AC2501BEE2D7500368992 /* SGEmotionCollectionView.h */,
+				CA2AC2511BEE2D7500368992 /* SGEmotionCollectionView.m */,
+				CA2AC2521BEE2D7500368992 /* SGEmotionKeyBoard.h */,
+				CA2AC2531BEE2D7500368992 /* SGEmotionKeyBoard.m */,
+				CA2AC2541BEE2D7500368992 /* SGEmotionTextView.h */,
+				CA2AC2551BEE2D7500368992 /* SGEmotionTextView.m */,
+				CA2AC2561BEE2D7500368992 /* UIView+Extension.h */,
+				CA2AC2571BEE2D7500368992 /* UIView+Extension.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA2AC2481BEE2D7500368992 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Emotion;
+			sourceTree = "<group>";
+		};
+		CA2AC24D1BEE2D7500368992 /* EmtionCollection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EmtionCollection;
+			sourceTree = "<group>";
+		};
+		CAAA34981BEF749100868C49 /* PictureSelectView */ = {
+			isa = PBXGroup;
+			children = (
+				CAAA34991BEF749100868C49 /* View */,
+			);
+			path = PictureSelectView;
+			sourceTree = "<group>";
+		};
+		CAAA34991BEF749100868C49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAAA349A1BEF749100868C49 /* CollectionView */,
+				CAAA349F1BEF749100868C49 /* SGSelectView.h */,
+				CAAA34A01BEF749100868C49 /* SGSelectView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAAA349A1BEF749100868C49 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CAAA349B1BEF749100868C49 /* PictureCollectionView.h */,
+				CAAA349C1BEF749100868C49 /* PictureCollectionView.m */,
+				CAAA349D1BEF749100868C49 /* PictureCollectionViewCell.h */,
+				CAAA349E1BEF749100868C49 /* PictureCollectionViewCell.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		CAB2C86E1BEFBAEC002DABFD /* PictureBrower */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2C86F1BEFBAEC002DABFD /* Controller */,
+				CAB2C8721BEFBAEC002DABFD /* View */,
+			);
+			path = PictureBrower;
+			sourceTree = "<group>";
+		};
+		CAB2C86F1BEFBAEC002DABFD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2C8701BEFBAEC002DABFD /* PictureBrowerCollectionVC.h */,
+				CAB2C8711BEFBAEC002DABFD /* PictureBrowerCollectionVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CAB2C8721BEFBAEC002DABFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAB2C8731BEFBAEC002DABFD /* PictureBrowerCell.h */,
+				CAB2C8741BEFBAEC002DABFD /* PictureBrowerCell.m */,
+				CAB2C8751BEFBAEC002DABFD /* PicturenBrowerCollectionView.h */,
+				CAB2C8761BEFBAEC002DABFD /* PicturenBrowerCollectionView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAD8DA7B1BF05F8600B1DEC5 /* PopViewVc */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8DA7C1BF05F8600B1DEC5 /* Controller */,
+				CAD8DA7D1BF05F8600B1DEC5 /* Model */,
+				CAD8DA7E1BF05F8600B1DEC5 /* View */,
+			);
+			path = PopViewVc;
+			sourceTree = "<group>";
+		};
+		CAD8DA7C1BF05F8600B1DEC5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8DA7F1BF05FAC00B1DEC5 /* SGPopViewVc.h */,
+				CAD8DA801BF05FAC00B1DEC5 /* SGPopViewVc.m */,
+				CAD8DA841BF05FDC00B1DEC5 /* SGPopViewVc.storyboard */,
+				CAD8DA861BF06AD700B1DEC5 /* SGPresentVc.h */,
+				CAD8DA871BF06AD700B1DEC5 /* SGPresentVc.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CAD8DA7D1BF05F8600B1DEC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CAD8DA7E1BF05F8600B1DEC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -788,6 +1048,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				181C7E6E1BE5DA7F00FC764B /* statuses.json in Resources */,
+				CAD8DA851BF05FDC00B1DEC5 /* SGPopViewVc.storyboard in Resources */,
+				CA2AC25A1BEE2D7500368992 /* Emoticons.bundle in Resources */,
 				189FC5AE1BDFC2C800660269 /* Info.plist in Resources */,
 				189FC55E1BDFBB3000660269 /* Assets.xcassets in Resources */,
 			);
@@ -851,26 +1113,37 @@
 				189FC5BD1BDFC30D00660269 /* SGLoginView.m in Sources */,
 				5144E7031BE3E564003183CC /* SGUserAccount.m in Sources */,
 				51D9FB1D1BE47FA0001D5583 /* SGaCordingTool.m in Sources */,
+				CA2AC25C1BEE2D7500368992 /* EmotionAttachment.m in Sources */,
+				CA2AC2581BEE2D7500368992 /* Emotion.m in Sources */,
+				CA2AC25B1BEE2D7500368992 /* EmoticonsPackage.m in Sources */,
+				CAAA34A31BEF749100868C49 /* SGSelectView.m in Sources */,
 				5144E6F31BE3BFCF003183CC /* SGWelcomeVc.m in Sources */,
 				5144E7171BE3F7DD003183CC /* MJFoundation.m in Sources */,
 				18FC71BE1BE8ED8A0098D7F5 /* SGSendController.m in Sources */,
 				189FC5B51BDFC2C800660269 /* NSArray+MASAdditions.m in Sources */,
 				5144E7001BE3C313003183CC /* SGAFNTool.m in Sources */,
+				CAAA34A21BEF749100868C49 /* PictureCollectionViewCell.m in Sources */,
 				18EDDA1B1BE2530900C63CD2 /* SGUserDefaultTool.m in Sources */,
+				CA2AC2621BEE2D7500368992 /* SGEmotionCollectionView.m in Sources */,
 				181C7E7F1BE625AE00FC764B /* SGCollectionViewCell.m in Sources */,
+				CA2AC2651BEE2D7500368992 /* UIView+Extension.m in Sources */,
 				5144E7191BE3F7DD003183CC /* MJType.m in Sources */,
+				CA2AC2611BEE2D7500368992 /* SGCollectionViewFlowLayout.m in Sources */,
+				CA2AC25D1BEE2D7500368992 /* SGEmotionAttachment.m in Sources */,
 				189FC5B41BDFC2C800660269 /* MASViewConstraint.m in Sources */,
 				18FC71C21BE8F59D0098D7F5 /* SGTitleView.m in Sources */,
 				18036E541BE6EC95009907EE /* SGPhotoView.m in Sources */,
 				189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */,
 				189FC5B11BDFC2C800660269 /* MASConstraintMaker.m in Sources */,
 				5144E71B1BE3F7DD003183CC /* NSObject+MJKeyValue.m in Sources */,
+				CA2AC25F1BEE2D7500368992 /* emotionCell.m in Sources */,
 				18215F501BE9D6F400E32319 /* SGSendToolBar.m in Sources */,
 				181C7E661BE5B67900FC764B /* SGBottomView.m in Sources */,
 				181C7E691BE5B69100FC764B /* SGTextLabel.m in Sources */,
 				189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */,
 				189FC58E1BDFBE8F00660269 /* SGDiscoverTableViewVc.m in Sources */,
 				181AC92E1BE4F5F900F696CE /* SGHomeBtn.m in Sources */,
+				CAAA34A11BEF749100868C49 /* PictureCollectionView.m in Sources */,
 				181AC9311BE4FE0C00F696CE /* SGUser.m in Sources */,
 				181C7E601BE5A9B400FC764B /* SGHomeCell.m in Sources */,
 				18EDDA181BE238AE00C63CD2 /* SGNewfutureCell.m in Sources */,
@@ -879,26 +1152,37 @@
 				5144E7161BE3F7DD003183CC /* MJConst.m in Sources */,
 				189FC5BA1BDFC2E200660269 /* SGBaseTableViewVc.m in Sources */,
 				181C7E7C1BE5F77400FC764B /* UIButton+Extension.m in Sources */,
+				CA2AC2631BEE2D7500368992 /* SGEmotionKeyBoard.m in Sources */,
 				189FC5B01BDFC2C800660269 /* MASConstraint.m in Sources */,
 				189FC58B1BDFBE7A00660269 /* SGHomeTableViewVc.m in Sources */,
+				CAD8DA811BF05FAC00B1DEC5 /* SGPopViewVc.m in Sources */,
 				181AC9341BE5015700F696CE /* SGStatus.m in Sources */,
 				189FC5B31BDFC2C800660269 /* MASViewAttribute.m in Sources */,
 				5144E6FA1BE3C113003183CC /* SGoAuthVc.m in Sources */,
 				18FC71C51BE8F6DE0098D7F5 /* NSString+Extension.m in Sources */,
+				CA2AC2601BEE2D7500368992 /* EmotionToolBar.m in Sources */,
 				5144E71D1BE3F7DD003183CC /* NSString+MJExtension.m in Sources */,
+				CA2AC2591BEE2D7500368992 /* SGEmotionVc.m in Sources */,
+				CA2AC25E1BEE2D7500368992 /* EmtionTool.m in Sources */,
 				18EDDA151BE2388500C63CD2 /* SGNewfutureVc.m in Sources */,
 				181C7E791BE5E7E200FC764B /* UILabel+Extension.m in Sources */,
+				CAB2C8771BEFBAEC002DABFD /* PictureBrowerCollectionVC.m in Sources */,
+				CAD8DA881BF06AD700B1DEC5 /* SGPresentVc.m in Sources */,
 				181C7E631BE5B66B00FC764B /* SGTopView.m in Sources */,
 				181C7E6C1BE5B6B100FC764B /* SGPictureView.m in Sources */,
 				189FC5B61BDFC2C800660269 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				CAB2C8781BEFBAEC002DABFD /* PictureBrowerCell.m in Sources */,
 				189FC5941BDFBEAB00660269 /* SGProfileTableViewVc.m in Sources */,
+				CA2AC2641BEE2D7500368992 /* SGEmotionTextView.m in Sources */,
 				189FC5AF1BDFC2C800660269 /* MASCompositeConstraint.m in Sources */,
 				5144E7181BE3F7DD003183CC /* MJProperty.m in Sources */,
 				189FC5B21BDFC2C800660269 /* MASLayoutConstraint.m in Sources */,
+				CAAA34971BEF73B000868C49 /* UIImage+Extension.m in Sources */,
 				189FC5881BDFBCF200660269 /* SGTabBarVC.m in Sources */,
 				189FC5911BDFBE9D00660269 /* SGMessageTableViewVc.m in Sources */,
 				181AC9371BE504F500F696CE /* SGUserAccountData.m in Sources */,
 				189FC5531BDFBB3000660269 /* main.m in Sources */,
+				CAB2C8791BEFBAEC002DABFD /* PicturenBrowerCollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
