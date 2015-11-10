@@ -10,4 +10,7 @@
 #import "SGBaseTableViewVc.h"
 @interface SGHomeTableViewVc : SGBaseTableViewVc
 
+// 点击图片转场动画时候的过度视图
+@property(nonatomic,strong) UIImageView *modalTempImageView;
+
 @end

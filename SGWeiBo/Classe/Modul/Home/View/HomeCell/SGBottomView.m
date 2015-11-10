@@ -34,17 +34,20 @@
 
 - (void)setupSubView {
     UIButton *forwordBtn = [[UIButton alloc] initWithTitle:@"转发" bgColor:[UIColor lightGrayColor] imageName:@"timeline_icon_retweet"];
-    
+    // 给转发微博添加事件
+    [forwordBtn addTarget:self action:@selector(forwardBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:forwordBtn];
      self.forwordBtn = forwordBtn;
 
 
     UIButton *commentButton = [[UIButton alloc] initWithTitle:@"评论" bgColor:[UIColor lightGrayColor] imageName:@"timeline_icon_comment"];
+    [commentButton addTarget:self action:@selector(commentButtonDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:commentButton];
     self.commentButton = commentButton;
     
     
     UIButton *lickButton = [[UIButton alloc] initWithTitle:@"赞" bgColor:[UIColor lightGrayColor] imageName:@"timeline_icon_unlike"];
+    [lickButton addTarget:self action:@selector(GoodBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:lickButton];
     self.lickButton = lickButton;
     
@@ -60,6 +63,18 @@
     [self addSubview:separatorViewTwo];
 }
 
+#pragma mark - 转发微博按钮点击事件
+- (void)forwardBtnDidClick {
+    NSLog(@"转发微博点击事件");
+}
+
+- (void)commentButtonDidClick {
+    NSLog(@"评论转发微博点击事件");
+}
+
+- (void)GoodBtnDidClick {
+    NSLog(@"点赞按钮点击事件");
+}
 - (void)setupSubViewFrame {
     
     CGFloat btnWidth = [UIScreen mainScreen].bounds.size.width / 3;

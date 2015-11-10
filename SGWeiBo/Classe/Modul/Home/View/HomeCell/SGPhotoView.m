@@ -55,8 +55,10 @@
 }
 
 - (void)imageTapGestureClick:(UITapGestureRecognizer *)tapgesture {
-    // 传一个字典出去吧
-    NSDictionary *dic = @{@"picUrls" : self.picUrls, @"imageViewTag":@([(UIImageView *)tapgesture.view tag])};
+    // 传一个字典出去吧  再添加一个元素，把当前点击的imageView传出去，利用这个imageView做过度视图
+    // 那么这样就不用传tag出去了因为imageView本来就有tag
+    NSDictionary *dic = @{@"picUrls" : self.picUrls,@"didClickImageView":(UIImageView *)tapgesture.view};
+    
     // 用代理传出去不好，用block吧block传不出去给控制器 ,通知吧
     [[NSNotificationCenter defaultCenter] postNotificationName:kPhotoViewImageViewTapGestureNotification object:dic];
 }

@@ -71,9 +71,11 @@
     NSDictionary *objectDic = notification.object;
     SGStatus *status = [[SGStatus alloc] init];
     status.picUrls = objectDic[@"picUrls"];
-    NSInteger index = [objectDic[@"imageViewTag"] integerValue];
+    UIImageView *selectImageView = objectDic[@"didClickImageView"];
+    self.modalTempImageView = selectImageView;
     
-    PictureBrowerCollectionVC *pictureBrowerVc = [[PictureBrowerCollectionVC alloc] initWithImageUrls:status.largeStrings Index:index];
+    PictureBrowerCollectionVC *pictureBrowerVc = [[PictureBrowerCollectionVC alloc] initWithImageUrls:status.largeStrings imageView:selectImageView];
+    
     [self.navigationController presentViewController:pictureBrowerVc animated:YES completion:nil];
 }
 
@@ -196,7 +198,7 @@
     [self titleBtnStatues];
     // 弹出popView
     UIStoryboard *stroryBoard = [UIStoryboard storyboardWithName:@"SGPopViewVc" bundle:nil];
-    SGPopViewVc * popViewVc = [stroryBoard instantiateViewControllerWithIdentifier:@"SGPopViewVc"];
+    SGPopViewVc *popViewVc = [stroryBoard instantiateViewControllerWithIdentifier:@"SGPopViewVc"];
     // 设置转换控制器的代理
     popViewVc.transitioningDelegate = self;
     // 设置modal的样式

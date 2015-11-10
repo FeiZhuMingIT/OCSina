@@ -9,6 +9,7 @@
 #import "PictureBrowerCollectionVC.h"
 #import "PictureBrowerCell.h"
 #import "UIButton+Extension.h"
+#import "SGPictureBrowerModalAnimation.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <Photos/Photos.h>
 #define kTipLabelY 40
@@ -24,8 +25,7 @@
 @property(nonatomic,strong) NSArray *imageUrls;
 
 @property(nonatomic,assign) NSInteger index;
-// 图片浏览
-@property(nonatomic,weak) UICollectionView *collectionView;
+
 // 提示文本
 @property(nonatomic,weak) UILabel *tipLabel;
 // 返回按钮
@@ -34,15 +34,20 @@
 @property(nonatomic,weak) UIButton *savaBtn;
 // 当前的cell
 @property(nonatomic,weak) PictureBrowerCell *currentCell;
+
 @end
 
 @implementation PictureBrowerCollectionVC
 
 
-- (instancetype)initWithImageUrls:(NSArray *)imageUrls Index:(NSInteger)index {
+- (instancetype)initWithImageUrls:(NSArray *)imageUrls imageView:(UIImageView *)tempView {
     if (self = [super init]) {
+        self.transitioningDelegate = self;
+        // 一定是这个自定义的代理
+//        self.modalPresentationStyle = UIModalPresentationCustom;
         self.imageUrls = imageUrls;
-        self.index = index;
+        self.tempView = tempView;
+        self.index = tempView.tag +1;
     }
     return self;
 }
@@ -94,7 +99,7 @@
     tipLabel.textAlignment = NSTextAlignmentCenter;
     tipLabel.textColor = [UIColor whiteColor];
     tipLabel.font = [UIFont systemFontOfSize:14];
-    tipLabel.text = [NSString stringWithFormat:@"%ld / %ld",self.index + 1,self.imageUrls.count];
+    tipLabel.text = [NSString stringWithFormat:@"%ld / %ld",self.index,self.imageUrls.count];
     self.tipLabel = tipLabel;
     [self.view addSubview:tipLabel];
     
@@ -139,7 +144,10 @@
 
 #pragma mark - 保存按钮点击时间
 - (void)saveBtnDidClick {
-    NSIndexPath *indexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
+    // 如果不可以访问相册那就不比保存直接提示用户不可以访问相册需要设置就好了
+    if ( ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        return;
+    }
 #warning -mark 判断是否可以访问相册
     // completionTarget: 保存成功或失败,回调这个对象
     // completionSelector: 回调的方法
@@ -171,15 +179,29 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - 设置转场动画
+//- (nullable UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source NS_AVAILABLE_IOS(8_0) {
+//    NSLog(@"来过了这里");
+//    return nil;
+//}
 
 
+// 当开始modal的时候触发
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    NSLog(@"%@",@"开始modal的时候触发");
+    
+    return [[SGPictureBrowerModalAnimation alloc] init];
+//    return nil;
+}
 
+//- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+//    NSLog(@"%@",@"消失的时候触发");
+//    return nil;
+//}
 
-
-
-
-
-
+- (void)dealloc {
+    NSLog(@"浏览图片挂掉");
+}
 
 
 

@@ -88,6 +88,9 @@
 		CAD8DA881BF06AD700B1DEC5 /* SGPresentVc.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA871BF06AD700B1DEC5 /* SGPresentVc.m */; settings = {ASSET_TAGS = (); }; };
 		CAD8DA8C1BF0D62D00B1DEC5 /* SGModalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA8B1BF0D62D00B1DEC5 /* SGModalAnimation.m */; settings = {ASSET_TAGS = (); }; };
 		CAD8DA8F1BF0E21400B1DEC5 /* SGDIsmissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD8DA8E1BF0E21400B1DEC5 /* SGDIsmissAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		CAEE67661BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE67651BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		CAEE67691BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE67681BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		CAF14EA71BF1AE4000990BAD /* SGPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF14EA61BF1AE4000990BAD /* SGPhotoModel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -256,6 +259,12 @@
 		CAD8DA8B1BF0D62D00B1DEC5 /* SGModalAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGModalAnimation.m; sourceTree = "<group>"; };
 		CAD8DA8D1BF0E21400B1DEC5 /* SGDIsmissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDIsmissAnimation.h; sourceTree = "<group>"; };
 		CAD8DA8E1BF0E21400B1DEC5 /* SGDIsmissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDIsmissAnimation.m; sourceTree = "<group>"; };
+		CAEE67641BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPictureBrowerModalAnimation.h; sourceTree = "<group>"; };
+		CAEE67651BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPictureBrowerModalAnimation.m; sourceTree = "<group>"; };
+		CAEE67671BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPictureBrowerDismissAnimation.h; sourceTree = "<group>"; };
+		CAEE67681BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPictureBrowerDismissAnimation.m; sourceTree = "<group>"; };
+		CAF14EA51BF1AE4000990BAD /* SGPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPhotoModel.h; sourceTree = "<group>"; };
+		CAF14EA61BF1AE4000990BAD /* SGPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPhotoModel.m; sourceTree = "<group>"; };
 		E95C7EFC96F4CA026C2D23A7 /* Pods-SGWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGWeiBo/Pods-SGWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -931,6 +940,7 @@
 			isa = PBXGroup;
 			children = (
 				CAB2C86F1BEFBAEC002DABFD /* Controller */,
+				CAF14EA41BF1AE2E00990BAD /* Model */,
 				CAB2C8721BEFBAEC002DABFD /* View */,
 			);
 			path = PictureBrower;
@@ -948,6 +958,7 @@
 		CAB2C8721BEFBAEC002DABFD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CAEE67631BF11F61005EFBB3 /* PictureBrowerAnimation */,
 				CAB2C8731BEFBAEC002DABFD /* PictureBrowerCell.h */,
 				CAB2C8741BEFBAEC002DABFD /* PictureBrowerCell.m */,
 				CAB2C8751BEFBAEC002DABFD /* PicturenBrowerCollectionView.h */,
@@ -1001,6 +1012,26 @@
 				CAD8DA8E1BF0E21400B1DEC5 /* SGDIsmissAnimation.m */,
 			);
 			path = ModelAnimation;
+			sourceTree = "<group>";
+		};
+		CAEE67631BF11F61005EFBB3 /* PictureBrowerAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				CAEE67641BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.h */,
+				CAEE67651BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.m */,
+				CAEE67671BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.h */,
+				CAEE67681BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.m */,
+			);
+			path = PictureBrowerAnimation;
+			sourceTree = "<group>";
+		};
+		CAF14EA41BF1AE2E00990BAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAF14EA51BF1AE4000990BAD /* SGPhotoModel.h */,
+				CAF14EA61BF1AE4000990BAD /* SGPhotoModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1151,6 +1182,7 @@
 				CA2AC25D1BEE2D7500368992 /* SGEmotionAttachment.m in Sources */,
 				189FC5B41BDFC2C800660269 /* MASViewConstraint.m in Sources */,
 				18FC71C21BE8F59D0098D7F5 /* SGTitleView.m in Sources */,
+				CAEE67691BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.m in Sources */,
 				18036E541BE6EC95009907EE /* SGPhotoView.m in Sources */,
 				189FC5561BDFBB3000660269 /* AppDelegate.m in Sources */,
 				189FC5B11BDFC2C800660269 /* MASConstraintMaker.m in Sources */,
@@ -1162,6 +1194,7 @@
 				189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */,
 				189FC58E1BDFBE8F00660269 /* SGDiscoverTableViewVc.m in Sources */,
 				181AC92E1BE4F5F900F696CE /* SGHomeBtn.m in Sources */,
+				CAEE67661BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.m in Sources */,
 				CAAA34A11BEF749100868C49 /* PictureCollectionView.m in Sources */,
 				181AC9311BE4FE0C00F696CE /* SGUser.m in Sources */,
 				181C7E601BE5A9B400FC764B /* SGHomeCell.m in Sources */,
@@ -1180,6 +1213,7 @@
 				5144E6FA1BE3C113003183CC /* SGoAuthVc.m in Sources */,
 				18FC71C51BE8F6DE0098D7F5 /* NSString+Extension.m in Sources */,
 				CA2AC2601BEE2D7500368992 /* EmotionToolBar.m in Sources */,
+				CAF14EA71BF1AE4000990BAD /* SGPhotoModel.m in Sources */,
 				5144E71D1BE3F7DD003183CC /* NSString+MJExtension.m in Sources */,
 				CA2AC2591BEE2D7500368992 /* SGEmotionVc.m in Sources */,
 				CA2AC25E1BEE2D7500368992 /* EmtionTool.m in Sources */,
