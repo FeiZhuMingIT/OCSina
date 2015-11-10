@@ -36,6 +36,7 @@
     // 获取原始imageView的frame值
     UIImageView *transitionView = [self modalTempImageViewSetFrame:self.picVc.tempView];
     // 添加到容器视图上
+//    [transitionContext containerView].backgroundColor = [UIColor blackColor];
     [[transitionContext containerView] addSubview:transitionView];
     self.picVc.collectionView.hidden = YES;
     
@@ -48,6 +49,8 @@
         [transitionView removeFromSuperview];
         self.picVc.collectionView.hidden = NO;
         [transitionContext completeTransition:YES];
+        toView.backgroundColor = [UIColor clearColor];
+//        toView.alpha = 0;
     }];
     
     

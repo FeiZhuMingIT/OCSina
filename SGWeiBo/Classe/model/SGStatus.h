@@ -15,6 +15,11 @@
 @property (nonatomic,copy)NSString *source;
 @property (nonatomic,strong)NSArray *pic_urls;
 @property (nonatomic,assign)NSInteger  id;
+
+// sina转化后的时间
+@property(nonatomic,copy) NSString *creadtedDate;
+// 文本属性转换
+@property(nonatomic,readonly) NSAttributedString *attributedString;
 // 图片数据字典
 @property (nonatomic,strong)NSArray * picUrls;
 /*
@@ -32,4 +37,5 @@
 
 // 先模拟数据
 //+ (NSArray *)loadStatusData;
++ (NSString *)getLargeURlWithpicUrl:(NSString *)picUrl;
 @end

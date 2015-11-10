@@ -39,6 +39,8 @@
         }
     }
 }
+
+
 // 真实的字符串
 - (NSString *)realText {
     NSMutableString *strM = [NSMutableString string];

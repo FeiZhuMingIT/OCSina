@@ -9,6 +9,7 @@
 #import "EmotionAttachment.h"
 #import "EmoticonsPackage.h"
 #import "Emotion.h"
+#import "SGEmotionAttachment.h"
 @implementation EmotionAttachment
 
 static NSInteger number = 0;
@@ -26,7 +27,6 @@ static NSInteger number = 0;
 {
     return [[self alloc] initWithDiction:dic];
 }
-
 
 + (instancetype)EmojinAttachmentWithString:(NSString *)id {
     
@@ -137,6 +137,109 @@ static NSInteger number = 0;
 
 #pragma mark - 没有对应key的时候调用
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key{};
+
+#pragma mark - 将一个文本转换成字符串
++ (NSAttributedString *)emotionStringToEmtionString:(NSString *)textString font:(UIFont *)font {
+    // 拿到文本字符串配置正则表达式
+    NSString *pattern = @"\\[.*?\\]";
+    NSRegularExpression *expression = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionDotMatchesLineSeparators error:nil];
+    
+    // 查找字符串的表情字符
+    NSArray *results = [expression matchesInString:textString options:NSMatchingReportProgress range:NSMakeRange(0, textString.length)];
+    
+    
+    // 将传进来的字符串设置为属性文本
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:textString];
+    NSInteger count = results.count;
+    // 修改属性文本
+    while (count > 0) {
+        // 从后面获取
+        NSTextCheckingResult *result = results[--count];
+        NSRange range = [result rangeAtIndex:0];
+        NSAttributedString *rangString = [attributedString attributedSubstringFromRange:range];
+        Emotion *emtion = [EmotionAttachment emotionWithString:rangString.string] ;
+        if ( emtion.png != nil) {
+            SGEmotionAttachment *attachment = [[SGEmotionAttachment alloc] init];
+            attachment.emotion = emtion;
+            //设置图片大小 和字体高度
+            CGFloat imageW = font.lineHeight + 2;
+            CGFloat imageH = imageW;
+            // 普通图片位置不好看
+            attachment.bounds = CGRectMake(0, -3, imageW, imageH);
+            // 将附件转换成属性文本
+            NSAttributedString *imageAttribute = [NSAttributedString attributedStringWithAttachment:attachment];
+            //
+            [attributedString replaceCharactersInRange:range withAttributedString:imageAttribute];
+            
+        }
+        
+        //  遍历所有emjin表情
+        NSLog(@"%@",rangString);
+    }
+    return [[NSAttributedString alloc] initWithAttributedString:attributedString];
+}
+
+
+/*
+ - (void)appendEmotion:(Emotion *)emotion {
+ if (emotion.code) {
+ // 通过insert方法来添加表情，会发送 文字内容改变的通知和调用代理
+ [self insertText:emotion.code];
+ } else {
+ NSMutableAttributedString *attStrM = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+ SGEmotionAttachment *attach = [[SGEmotionAttachment alloc] init];
+ attach.emotion = emotion;
+ // 设置图片大小 = 字体的高度
+ CGFloat imgW = self.font.lineHeight + 2;
+ CGFloat imgH = imgW;
+ // 普通图片位置不好看，往下移动，负数即可
+ attach.bounds = CGRectMake(0, -3, imgW, imgH);
+ NSAttributedString *imgAttStr = [NSAttributedString attributedStringWithAttachment:attach];
+ // 插入的时候，要获取插入的位置
+ NSInteger insertIndex = self.selectedRange.location;
+ [attStrM insertAttributedString:imgAttStr atIndex:insertIndex];
+ // 每次重新设置文本字体大小
+ [attStrM addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, attStrM.length)];
+ self.attributedText = attStrM;
+ // 光标回到插入后的位置
+ self.selectedRange = NSMakeRange(insertIndex + 1, 0);
+ if ([self.delegate respondsToSelector:@selector(textViewDidChange:)]) {
+ [self.delegate textViewDidChange:self];
+ }
+ }
+ }
+ */
+
++ (Emotion *)emotionWithString:(NSString *)string {
+   NSArray *emtionAttchmengs = [EmotionAttachment emotionAttachments];
+    for(EmotionAttachment *emotionAttachment in emtionAttchmengs) {
+        for (Emotion *emtion in emotionAttachment.emoticons) {
+            NSLog(@"%s",__func__);
+            if ([emtion.chs isEqualToString:string]) {
+                return emtion;
+            }
+        }
+    }
+    return nil;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

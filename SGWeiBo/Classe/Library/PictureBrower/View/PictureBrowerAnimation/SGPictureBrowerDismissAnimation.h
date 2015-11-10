@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SGPictureBrowerDismissAnimation : NSObject
+@interface SGPictureBrowerDismissAnimation : NSObject<UIViewControllerAnimatedTransitioning>
 
 @end

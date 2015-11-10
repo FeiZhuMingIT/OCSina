@@ -8,6 +8,8 @@
 
 #import "SGPhotoView.h"
 #import "UIImageView+WebCache.h"
+#import "SGImageModel.h"
+#import "SGStatus.h"
 #define kImageViewCount 9
 #define kImageWidth 90
 #define kMargin 10
@@ -38,6 +40,8 @@
 
 
 - (void)setupSubView {
+    
+
     for (NSInteger index = 0; index < kImageViewCount; index ++) {
         UIImageView *imageViwe = [[UIImageView alloc] init];
         // 添加单击手势
@@ -52,12 +56,17 @@
         gifView.image = [UIImage imageNamed:@"timeline_image_gif"];
         gifView.hidden = YES;
     }
+    
+    // 得到imageView模型的所有
+    
+    
 }
 
 - (void)imageTapGestureClick:(UITapGestureRecognizer *)tapgesture {
     // 传一个字典出去吧  再添加一个元素，把当前点击的imageView传出去，利用这个imageView做过度视图
+    // imageModels
     // 那么这样就不用传tag出去了因为imageView本来就有tag
-    NSDictionary *dic = @{@"picUrls" : self.picUrls,@"didClickImageView":(UIImageView *)tapgesture.view};
+    NSDictionary *dic = @{@"imageModels" : self.imageModels,@"didClickImageView":(UIImageView *)tapgesture.view};
     
     // 用代理传出去不好，用block吧block传不出去给控制器 ,通知吧
     [[NSNotificationCenter defaultCenter] postNotificationName:kPhotoViewImageViewTapGestureNotification object:dic];
@@ -85,6 +94,10 @@
 - (void)setPicUrls:(NSArray *)picUrls {
     _picUrls = picUrls;
     NSInteger count = picUrls.count;
+    
+    
+    // 将图片打包成image数组
+    NSMutableArray *mtbArr = [NSMutableArray array];
     // 如果都不在则全部隐藏
     for (NSInteger index = 0; index < kImageViewCount; index ++) {
         UIImageView *imageView = self.subviews[index];
@@ -99,10 +112,19 @@
             // 加载图片
             [imageView sd_setImageWithURL:[NSURL URLWithString:imagePath]];
             imageView.hidden = NO;
+            
+            
+            // 这里需要把所有的imageView传出去
+            SGImageModel *model = [[SGImageModel alloc] init];
+#warning 这里这样写非常不符合面向对象思想!
+            model.imageView = imageView;
+            model.largerUrl = [SGStatus getLargeURlWithpicUrl:imagePath];
+            [mtbArr addObject:model];
         } else {
             imageView.hidden = YES;
         }
     }
+    self.imageModels = [NSArray arrayWithArray:mtbArr];
 }
 // 计算行高
 - (CGSize)countSize {

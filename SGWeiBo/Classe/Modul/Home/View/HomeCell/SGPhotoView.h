@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class SGPhotoView;
+
+@class SGImageModel;
 
 //@protocol SGPhotoViewDelegate <NSObject>
 //
@@ -21,7 +22,7 @@
 // 全部图片的链接 可以为 nil
 @property (nonatomic,strong)NSArray * picUrls;
 
-//@property(nonatomic,weak) id<SGPhotoViewDelegate> delegate;
+@property(nonatomic,strong) NSArray *imageModels;
 
 - (CGSize)countSize;
 @end

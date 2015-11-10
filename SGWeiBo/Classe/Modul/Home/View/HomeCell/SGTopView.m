@@ -85,7 +85,7 @@
     
     [self.nameLabel sizeToFit];
     // 创建时间
-    self.timeLabel.text = status.created_at;
+    self.timeLabel.text = status.creadtedDate;
     [self.timeLabel sizeToFit];
     // 来源
     self.sourceLabel.text = status.source;

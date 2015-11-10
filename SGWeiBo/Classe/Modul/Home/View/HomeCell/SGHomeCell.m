@@ -36,8 +36,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    
 }
 
 + (instancetype)homeCellWithTableView:(UITableView *)tableView {
@@ -116,7 +114,7 @@
     
     _status = status;
     self.topView.status = status;
-    self.desteilLabel.text = status.text;
+    self.desteilLabel.attributedText = status.attributedString;
     self.photoView.picUrls = status.picUrls;
     CGSize size = [self.photoView  countSize];
     self.cellHeightx = size.height;

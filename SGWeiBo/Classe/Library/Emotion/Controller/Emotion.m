@@ -69,4 +69,5 @@
 - (NSString *)description {
     return [NSString stringWithFormat:@"png:%@  code:%@, removeEmoji:%@ time:%ld",self.png,self.code,self.removeEmoji,self.degreeTimes];
 }
+
 @end

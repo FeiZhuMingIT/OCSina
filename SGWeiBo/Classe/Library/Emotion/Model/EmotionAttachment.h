@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 @class Emotion;
 @interface EmotionAttachment : NSObject
 
@@ -21,6 +22,9 @@
 @property (nonatomic,strong)NSString *group_name_en;
 // 该组的所有表情
 @property (nonatomic,strong)NSMutableArray *emoticons;
+//
+// 将一个文本转换成字符串
++ (NSAttributedString *)emotionStringToEmtionString:(NSString *)textString font:(UIFont *)font;
 - (void)appendEmotion:(Emotion *)emtion;
 -(instancetype)initWithDiction:(NSDictionary *)dic;
 +(instancetype)emotionAttachmentWithDiction:(NSDictionary *)dic;

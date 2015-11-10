@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 @interface Emotion : NSObject
 @property (nonatomic,copy)NSString * id;
 // emoji表情
@@ -24,5 +24,7 @@
 // 浪小花
 -(instancetype)initWithDiction:(NSDictionary *)dic;
 +(instancetype)emotionWithDiction:(NSDictionary *)dic;
+
+
 
 @end

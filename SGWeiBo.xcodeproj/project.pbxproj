@@ -91,6 +91,8 @@
 		CAEE67661BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE67651BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.m */; settings = {ASSET_TAGS = (); }; };
 		CAEE67691BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE67681BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.m */; settings = {ASSET_TAGS = (); }; };
 		CAF14EA71BF1AE4000990BAD /* SGPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF14EA61BF1AE4000990BAD /* SGPhotoModel.m */; settings = {ASSET_TAGS = (); }; };
+		CAF14EED1BF1F25000990BAD /* SGImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF14EEC1BF1F25000990BAD /* SGImageModel.m */; settings = {ASSET_TAGS = (); }; };
+		CAF14F381BF2374700990BAD /* NSDate+Exsention.m in Sources */ = {isa = PBXBuildFile; fileRef = CAF14F371BF2374700990BAD /* NSDate+Exsention.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -265,6 +267,10 @@
 		CAEE67681BF11FA0005EFBB3 /* SGPictureBrowerDismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPictureBrowerDismissAnimation.m; sourceTree = "<group>"; };
 		CAF14EA51BF1AE4000990BAD /* SGPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPhotoModel.h; sourceTree = "<group>"; };
 		CAF14EA61BF1AE4000990BAD /* SGPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPhotoModel.m; sourceTree = "<group>"; };
+		CAF14EEB1BF1F25000990BAD /* SGImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGImageModel.h; sourceTree = "<group>"; };
+		CAF14EEC1BF1F25000990BAD /* SGImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGImageModel.m; sourceTree = "<group>"; };
+		CAF14F361BF2374700990BAD /* NSDate+Exsention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Exsention.h"; sourceTree = "<group>"; };
+		CAF14F371BF2374700990BAD /* NSDate+Exsention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Exsention.m"; sourceTree = "<group>"; };
 		E95C7EFC96F4CA026C2D23A7 /* Pods-SGWeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGWeiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGWeiBo/Pods-SGWeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -287,13 +293,6 @@
 				194C7E227C48DDF7853CBDB2 /* Pods-SGWeiBo.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		181AC92A1BE4F5CE00F696CE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		181AC92B1BE4F5CE00F696CE /* View */ = {
@@ -339,6 +338,8 @@
 				18FC71C41BE8F6DE0098D7F5 /* NSString+Extension.m */,
 				CAAA34951BEF73B000868C49 /* UIImage+Extension.h */,
 				CAAA34961BEF73B000868C49 /* UIImage+Extension.m */,
+				CAF14F361BF2374700990BAD /* NSDate+Exsention.h */,
+				CAF14F371BF2374700990BAD /* NSDate+Exsention.m */,
 			);
 			path = Exsension;
 			sourceTree = "<group>";
@@ -477,8 +478,8 @@
 		189FC5711BDFBC3900660269 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CAF14EEA1BF1F23800990BAD /* Model */,
 				189FC5721BDFBC3900660269 /* Controller */,
-				181AC92A1BE4F5CE00F696CE /* Model */,
 				181AC92B1BE4F5CE00F696CE /* View */,
 			);
 			path = Home;
@@ -820,9 +821,9 @@
 		CA2AC2351BEE2D7500368992 /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
+				CA2AC23C1BEE2D7500368992 /* Emoticons.bundle */,
 				CA2AC2361BEE2D7500368992 /* Category */,
 				CA2AC2371BEE2D7500368992 /* Controller */,
-				CA2AC23C1BEE2D7500368992 /* Emoticons.bundle */,
 				CA2AC23D1BEE2D7500368992 /* Model */,
 				CA2AC2441BEE2D7500368992 /* Tool */,
 				CA2AC2471BEE2D7500368992 /* View */,
@@ -1034,6 +1035,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CAF14EEA1BF1F23800990BAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAF14EEB1BF1F25000990BAD /* SGImageModel.h */,
+				CAF14EEC1BF1F25000990BAD /* SGImageModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1172,6 +1182,7 @@
 				18FC71BE1BE8ED8A0098D7F5 /* SGSendController.m in Sources */,
 				189FC5B51BDFC2C800660269 /* NSArray+MASAdditions.m in Sources */,
 				5144E7001BE3C313003183CC /* SGAFNTool.m in Sources */,
+				CAF14EED1BF1F25000990BAD /* SGImageModel.m in Sources */,
 				CAAA34A21BEF749100868C49 /* PictureCollectionViewCell.m in Sources */,
 				18EDDA1B1BE2530900C63CD2 /* SGUserDefaultTool.m in Sources */,
 				CA2AC2621BEE2D7500368992 /* SGEmotionCollectionView.m in Sources */,
@@ -1194,6 +1205,7 @@
 				189FC5B71BDFC2C800660269 /* View+MASAdditions.m in Sources */,
 				189FC58E1BDFBE8F00660269 /* SGDiscoverTableViewVc.m in Sources */,
 				181AC92E1BE4F5F900F696CE /* SGHomeBtn.m in Sources */,
+				CAF14F381BF2374700990BAD /* NSDate+Exsention.m in Sources */,
 				CAEE67661BF11F86005EFBB3 /* SGPictureBrowerModalAnimation.m in Sources */,
 				CAAA34A11BEF749100868C49 /* PictureCollectionView.m in Sources */,
 				181AC9311BE4FE0C00F696CE /* SGUser.m in Sources */,

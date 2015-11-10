@@ -22,6 +22,7 @@
 #import "SGPresentVc.h"
 #import "SGModalAnimation.h"
 #import "SGDIsmissAnimation.h"
+#import "SGImageModel.h"
 @interface SGHomeTableViewVc() <UITabBarDelegate,UITableViewDataSource,UIViewControllerTransitioningDelegate>
 @property (nonatomic,weak)UIButton * leftBtn;
 @property (nonatomic,weak)UIButton * rightBtn;
@@ -69,12 +70,12 @@
 #pragma mark - 单击图片cell点击的通知
 - (void)photoViewImageViewTapGesture:(NSNotification *)notification {
     NSDictionary *objectDic = notification.object;
-    SGStatus *status = [[SGStatus alloc] init];
-    status.picUrls = objectDic[@"picUrls"];
+
+    NSArray *imageModels = objectDic[@"imageModels"];
     UIImageView *selectImageView = objectDic[@"didClickImageView"];
     self.modalTempImageView = selectImageView;
     
-    PictureBrowerCollectionVC *pictureBrowerVc = [[PictureBrowerCollectionVC alloc] initWithImageUrls:status.largeStrings imageView:selectImageView];
+    PictureBrowerCollectionVC *pictureBrowerVc = [[PictureBrowerCollectionVC alloc] initWithImageModel:imageModels imageView:selectImageView];
     
     [self.navigationController presentViewController:pictureBrowerVc animated:YES completion:nil];
 }
@@ -220,6 +221,8 @@
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     return [[SGDIsmissAnimation alloc] init];
 }
+
+
 //返回一个 控制展现(显示) 的对象
 - (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
 
