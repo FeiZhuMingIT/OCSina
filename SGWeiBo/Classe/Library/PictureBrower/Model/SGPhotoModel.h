@@ -9,14 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface SGPhotoModel : NSObject
+
 // 大图url
 @property(nonatomic,copy) NSString *url;
+
 // 大图image
 @property(nonatomic,strong) UIImageView *imageView;
-
-- (instancetype)initWithDic:(NSDictionary *)dic;
-+ (instancetype)photoModelWithDic:(NSDictionary *)dic;
-
-+ (NSArray *)photoModesWithUrls:(NSArray *)urls;
-
 @end

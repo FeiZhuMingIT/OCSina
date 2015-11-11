@@ -14,12 +14,11 @@
 #define kMargin 10
 @interface PictureCollectionView()<UICollectionViewDataSource,UICollectionViewDelegate,PictureCollectionViewCellDelegate>
 
-
-
+// 下标
 @property(nonatomic,assign) NSInteger index;
 
+// 布局
 @property(nonatomic,strong) UICollectionViewFlowLayout *flowLayout;
-
 
 @end
 
@@ -59,8 +58,10 @@
     return layout;
 }
 
+#pragma mark - collectionView数据源方法
 // 如果count小于最大count数，在后面自动加一个添加按钮，如果等于最大数，那么按钮消失
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     // 判断是否最大数量是的话就不需要 + 默认按钮了
     return self.imageArr.count == kPictureCollectionCellMax? kPictureCollectionCellMax : self.imageArr.count + 1;
 }
@@ -70,33 +71,36 @@
     PictureCollectionViewCell *cell = [PictureCollectionViewCell cellWithCollectionView:collectionView WithIndexPath:indexPath];
 
     cell.delegate = self;
+    
     // 如果是最后一个元素
     if (self.imageArr.count != kPictureCollectionCellMax) {
+        
         // 判断是不是最后一个row如果不是就
         if (indexPath.row == self.imageArr.count) { // 不用减一因为上面已经默认加一了
+            
             // 防止复用
             cell.image = nil;
 
             return cell;
         }
     }
+    
     cell.tag = indexPath.row;
+    
     cell.image = self.imageArr[indexPath.row];
+    
     return cell;
 }
 
 #pragma mark - PictureCollectionViewCell代理方法
 - (void)pictureCollectionViewCell:(PictureCollectionViewCell *)pictureCell DeleteBtnClick:(UIButton *)deletaBtn {
+    
     // 拿到当前cell的image数据在数组中删除
     UIImage *deleteImage = pictureCell.image;
-    NSLog(@"%@",self.imageArr);
+    
     [self.imageArr removeObject:deleteImage];
-    NSLog(@"%@",self.imageArr);
+
     [self reloadData];
 }
-
-
-#pragma mark - set & get
-
 
 @end

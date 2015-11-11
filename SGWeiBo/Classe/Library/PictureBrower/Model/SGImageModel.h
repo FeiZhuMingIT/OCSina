@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface SGImageModel : NSObject
+
 @property(nonatomic,strong) UIImageView *imageView;
 
 @property(nonatomic,copy) NSString *largerUrl;
