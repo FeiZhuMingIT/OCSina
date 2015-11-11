@@ -24,7 +24,7 @@
 #define KScreenH [UIScreen mainScreen].bounds.size.height
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kPictureBrowerCellIdentifier @"PictureBrowerCellIdentifier"
-@interface  PictureBrowerCollectionVC()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface  PictureBrowerCollectionVC()<UICollectionViewDataSource,UICollectionViewDelegate,PictureBrowerCellDelegate>
 
 @property(nonatomic,assign) NSInteger index;
 #warning 这个应该是浏览器的模型不应该是home的模型
@@ -132,9 +132,10 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PictureBrowerCell *cell = [PictureBrowerCell cellWithCollectionView:collectionView IndexPath:indexPath];
     SGImageModel *imageModel = self.imageModels[indexPath.row];
-    cell.largeString = imageModel.largerUrl;
+    cell.imageModel = imageModel;
     self.currentCell = cell;
     cell.backgroundColor = [UIColor clearColor];
+    cell.celldelegate =self;
     return cell;
 }
 #pragma mark - 当停止滑动的时候调用的方法
@@ -210,6 +211,14 @@
     return [[SGPictureBrowerDismissAnimation alloc] init];
 }
 
+#pragma mark - cellDelegate的代理方法
+- (void)pictureBrowerCellClose:(PictureBrowerCell *)cell {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)pictureBrowerCell:(PictureBrowerCell *)cell WithAlpha:(CGFloat)alpha {
+    self.collectionView.alpha = alpha;
+}
 
 #pragma mark - 当控制器消失的时候调用
 - (void)dealloc {

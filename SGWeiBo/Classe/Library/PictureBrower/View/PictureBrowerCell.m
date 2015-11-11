@@ -84,7 +84,16 @@
 // 缩放时调用
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-    NSLog(@"缩放时");
+//    if ([self.celldelegate respondsToSelector:@selector(pictureBrowerCell:WithAlpha:)]) {
+//        [self.celldelegate pictureBrowerCell:self WithAlpha:self.imageView.transform.a];
+//    }
+//    if (self.scrollerView.transform.a < 1) {
+//
+//    }
+    
+    // contextOffset是目标相对与scorllView的偏移值所以是负数
+//    NSLog(@"%lf",self.scrollerView.contentOffset.x);
+//    NSLog(@"%lf",self.scrollerView.contentOffset.y);
 }
 
 // 缩放后调用
@@ -100,15 +109,43 @@
         offerX = 0;
     }
     [UIView animateWithDuration:0.25 animations:^{
-        NSLog(@"%lf",offerY);
+
      
         // 设置scrollView的contentInset来居中图片
 //        self.imageView.frame = CGRectMake(offerX, offerY, kScreenWidth - 2 * offerX, kScreenHeight - 2 * offerY);
         self.scrollerView.contentInset = UIEdgeInsetsMake(offerY, offerX, offerY, offerX);
 //        self.scrollerView.contentOffset = CGPointMake(offerX, offerY);
-           NSLog(@"%@",NSStringFromCGRect(self.imageView.frame));
-        NSLog(@"%@",NSStringFromCGRect(self.scrollerView.frame));
+//           NSLog(@"%@",NSStringFromCGRect(self.imageView.frame));
+//        NSLog(@"%@",NSStringFromCGRect(self.scrollerView.frame));
     }];
+    
+    // ad缩放 bc旋转 xy平移
+    // 当缩放小于0.7的时候，关闭动画
+    if (self.imageView.transform.a < 0.7) {
+        // 放到缩略图的位置关闭动画
+        // 回到原来的位置再关闭
+        // 不然的话会有不协调每次都出去外面再关闭
+        CGRect rect = [self.imageModel.imageView.superview convertRect:self.imageModel.imageView.frame toCoordinateSpace:self];
+        // 拿到
+//        NSLog(@"%@",NSStringFromCGRect(rect));
+//        让scollerView的偏移到原来的位置?不懂到底是为什么要这样
+        [UIView animateWithDuration:0.5 animations:^{
+            self.scrollerView.contentOffset = CGPointMake( -rect.origin.x, -rect.origin.y);
+            // 关键是让那个它回到一开始的位置
+            self.imageView.frame = CGRectMake(0, 0, rect.size.width, rect.size.height);
+            self.scrollerView.contentInset = UIEdgeInsetsMake(rect.origin.y, rect.origin.x, 0, 0);
+        } completion:^(BOOL finished) {
+            if ([self.celldelegate respondsToSelector:@selector(pictureBrowerCellClose:)]) {
+                [self.celldelegate pictureBrowerCellClose:self];
+            }
+        }];
+        // 没有关闭动画，重新让alpha等于1
+//        if ([self.celldelegate respondsToSelector:@selector(pictureBrowerCell:WithAlpha:)]) {
+//            [self.celldelegate pictureBrowerCell:self WithAlpha:1];
+//        }
+        
+       
+    }
 }
 
 #pragma mark - set & get
@@ -129,6 +166,10 @@
     }];
 }
 
+- (void)setImageModel:(SGImageModel *)imageModel {
+    _imageModel = imageModel;
+    self.largeString = imageModel.largerUrl;
+}
 
 
 
