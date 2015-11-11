@@ -25,11 +25,9 @@
 
 @implementation PictureCollectionView
 
+
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
     if (self = [super initWithFrame:frame collectionViewLayout:layout]) {
-        
-        [self setupSubView];
-        
         self.delegate = self;
         
         self.dataSource = self;
@@ -59,10 +57,6 @@
     layout.sectionInset = UIEdgeInsetsMake(kMargin, kMargin, kMargin, kMargin);
     
     return layout;
-}
-
-- (void)setupSubView {
-    
 }
 
 // 如果count小于最大count数，在后面自动加一个添加按钮，如果等于最大数，那么按钮消失

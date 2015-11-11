@@ -24,11 +24,18 @@
 
 @implementation PictureCollectionViewCell
 
+
+// 写在init方法里面将不会调用，所以写在这个方法里边
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+         [self setupSubView];
+    }
+    return self;
+}
+
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView WithIndexPath:(NSIndexPath *)indexPath {
     
     PictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kPictureCollectionViewCellIdentifier forIndexPath:indexPath];
-    
-    [cell setupSubView];
     
     return cell;
 }

@@ -68,7 +68,6 @@
 		CA2AC25B1BEE2D7500368992 /* EmoticonsPackage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC23F1BEE2D7500368992 /* EmoticonsPackage.m */; settings = {ASSET_TAGS = (); }; };
 		CA2AC25C1BEE2D7500368992 /* EmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2411BEE2D7500368992 /* EmotionAttachment.m */; settings = {ASSET_TAGS = (); }; };
 		CA2AC25D1BEE2D7500368992 /* SGEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2431BEE2D7500368992 /* SGEmotionAttachment.m */; settings = {ASSET_TAGS = (); }; };
-		CA2AC25E1BEE2D7500368992 /* EmtionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC2461BEE2D7500368992 /* EmtionTool.m */; settings = {ASSET_TAGS = (); }; };
 		CA2AC25F1BEE2D7500368992 /* emotionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC24A1BEE2D7500368992 /* emotionCell.m */; settings = {ASSET_TAGS = (); }; };
 		CA2AC2601BEE2D7500368992 /* EmotionToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC24C1BEE2D7500368992 /* EmotionToolBar.m */; settings = {ASSET_TAGS = (); }; };
 		CA2AC2611BEE2D7500368992 /* SGCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC24F1BEE2D7500368992 /* SGCollectionViewFlowLayout.m */; settings = {ASSET_TAGS = (); }; };
@@ -80,7 +79,6 @@
 		CAAA34971BEF73B000868C49 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA34961BEF73B000868C49 /* UIImage+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		CAAA34A11BEF749100868C49 /* PictureCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA349C1BEF749100868C49 /* PictureCollectionView.m */; settings = {ASSET_TAGS = (); }; };
 		CAAA34A21BEF749100868C49 /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA349E1BEF749100868C49 /* PictureCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		CAAA34A31BEF749100868C49 /* SGSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAA34A01BEF749100868C49 /* SGSelectView.m */; settings = {ASSET_TAGS = (); }; };
 		CAB2C8771BEFBAEC002DABFD /* PictureBrowerCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2C8711BEFBAEC002DABFD /* PictureBrowerCollectionVC.m */; settings = {ASSET_TAGS = (); }; };
 		CAB2C8781BEFBAEC002DABFD /* PictureBrowerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2C8741BEFBAEC002DABFD /* PictureBrowerCell.m */; settings = {ASSET_TAGS = (); }; };
 		CAB2C8791BEFBAEC002DABFD /* PicturenBrowerCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB2C8761BEFBAEC002DABFD /* PicturenBrowerCollectionView.m */; settings = {ASSET_TAGS = (); }; };
@@ -222,8 +220,6 @@
 		CA2AC2411BEE2D7500368992 /* EmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmotionAttachment.m; sourceTree = "<group>"; };
 		CA2AC2421BEE2D7500368992 /* SGEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGEmotionAttachment.h; sourceTree = "<group>"; };
 		CA2AC2431BEE2D7500368992 /* SGEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGEmotionAttachment.m; sourceTree = "<group>"; };
-		CA2AC2451BEE2D7500368992 /* EmtionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmtionTool.h; sourceTree = "<group>"; };
-		CA2AC2461BEE2D7500368992 /* EmtionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmtionTool.m; sourceTree = "<group>"; };
 		CA2AC2491BEE2D7500368992 /* emotionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = emotionCell.h; sourceTree = "<group>"; };
 		CA2AC24A1BEE2D7500368992 /* emotionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emotionCell.m; sourceTree = "<group>"; };
 		CA2AC24B1BEE2D7500368992 /* EmotionToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmotionToolBar.h; sourceTree = "<group>"; };
@@ -246,8 +242,6 @@
 		CAAA349C1BEF749100868C49 /* PictureCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionView.m; sourceTree = "<group>"; };
 		CAAA349D1BEF749100868C49 /* PictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewCell.h; sourceTree = "<group>"; };
 		CAAA349E1BEF749100868C49 /* PictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewCell.m; sourceTree = "<group>"; };
-		CAAA349F1BEF749100868C49 /* SGSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSelectView.h; sourceTree = "<group>"; };
-		CAAA34A01BEF749100868C49 /* SGSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSelectView.m; sourceTree = "<group>"; };
 		CAB2C8701BEFBAEC002DABFD /* PictureBrowerCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureBrowerCollectionVC.h; sourceTree = "<group>"; };
 		CAB2C8711BEFBAEC002DABFD /* PictureBrowerCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureBrowerCollectionVC.m; sourceTree = "<group>"; };
 		CAB2C8731BEFBAEC002DABFD /* PictureBrowerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureBrowerCell.h; sourceTree = "<group>"; };
@@ -824,7 +818,6 @@
 				CA2AC2361BEE2D7500368992 /* Category */,
 				CA2AC2371BEE2D7500368992 /* Controller */,
 				CA2AC23D1BEE2D7500368992 /* Model */,
-				CA2AC2441BEE2D7500368992 /* Tool */,
 				CA2AC2471BEE2D7500368992 /* View */,
 			);
 			path = Emotion;
@@ -859,15 +852,6 @@
 				CA2AC2431BEE2D7500368992 /* SGEmotionAttachment.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CA2AC2441BEE2D7500368992 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				CA2AC2451BEE2D7500368992 /* EmtionTool.h */,
-				CA2AC2461BEE2D7500368992 /* EmtionTool.m */,
-			);
-			path = Tool;
 			sourceTree = "<group>";
 		};
 		CA2AC2471BEE2D7500368992 /* View */ = {
@@ -919,8 +903,6 @@
 			isa = PBXGroup;
 			children = (
 				CAAA349A1BEF749100868C49 /* CollectionView */,
-				CAAA349F1BEF749100868C49 /* SGSelectView.h */,
-				CAAA34A01BEF749100868C49 /* SGSelectView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1168,7 +1150,6 @@
 				CAD8DA8C1BF0D62D00B1DEC5 /* SGModalAnimation.m in Sources */,
 				CA2AC2581BEE2D7500368992 /* Emotion.m in Sources */,
 				CA2AC25B1BEE2D7500368992 /* EmoticonsPackage.m in Sources */,
-				CAAA34A31BEF749100868C49 /* SGSelectView.m in Sources */,
 				5144E6F31BE3BFCF003183CC /* SGWelcomeVc.m in Sources */,
 				5144E7171BE3F7DD003183CC /* MJFoundation.m in Sources */,
 				18FC71BE1BE8ED8A0098D7F5 /* SGSendController.m in Sources */,
@@ -1220,7 +1201,6 @@
 				CAF14EA71BF1AE4000990BAD /* SGPhotoModel.m in Sources */,
 				5144E71D1BE3F7DD003183CC /* NSString+MJExtension.m in Sources */,
 				CA2AC2591BEE2D7500368992 /* SGEmotionVc.m in Sources */,
-				CA2AC25E1BEE2D7500368992 /* EmtionTool.m in Sources */,
 				18EDDA151BE2388500C63CD2 /* SGNewfutureVc.m in Sources */,
 				181C7E791BE5E7E200FC764B /* UILabel+Extension.m in Sources */,
 				CAB2C8771BEFBAEC002DABFD /* PictureBrowerCollectionVC.m in Sources */,

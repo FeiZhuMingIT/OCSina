@@ -11,7 +11,7 @@
 #import "EmotionAttachment.h"
 #import "EmotionToolBar.h"
 #import "Emotion.h"
-#import "EmtionTool.h"
+
 #import "SGCollectionViewFlowLayout.h"
 #import "emotionCell.h"
 #define kSreenHeight [UIScreen mainScreen].bounds.size.height
